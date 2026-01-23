@@ -58,7 +58,6 @@
       animation: breatheGlow 3s ease-in-out infinite;
     }
 
-    /* Ears */
     .loader-panther-head::before,
     .loader-panther-head::after {
       content: "";
@@ -126,6 +125,7 @@
       position: relative;
       padding-bottom: 4px;
       color: var(--gold);
+      text-decoration: none;
     }
 
     .nav-links a::after {
@@ -436,7 +436,6 @@
       background: rgba(0,0,0,0.9);
     }
 
-    /* RESPONSIVE */
     @media (max-width: 768px) {
       h1 { font-size: 2.4rem; }
       header { padding: 70px 16px 40px; }
@@ -485,6 +484,7 @@
         <a href="#top">Home</a>
         <a href="#programme">Programme</a>
         <a href="#standards">Standards</a>
+        <a href="#ethos">Ethos</a>
         <a href="#apply">Apply</a>
       </div>
     </div>
@@ -503,7 +503,7 @@
     <span class="pill">Ascension Programme</span>
     <h2>The Path to Institutional Discipline</h2>
     <p>
-      The Ascension Programme is a structured, elite-level development system designed to transform retail traders into disciplined, consistent, and strategically aligned operators. This is not a signals group. This is a private wealth intelligence house — a place where traders evolve into high-performance individuals capable of managing £20k+ accounts with precision.
+      The Ascension Programme is a structured, elite-level development system designed to transform retail traders into disciplined, consistent, and strategically aligned operators. This is not a signals group. This is a private wealth intelligence house — a place where traders evolve into high-performance individuals capable of managing significant capital with precision.
     </p>
 
     <div class="stage-grid">
@@ -525,4 +525,60 @@
   <!-- STANDARDS SECTION -->
   <section id="standards" class="section-wrapper">
     <span class="pill">Standards</span>
-    <h2>The Panthera Eth
+    <h2>The Panthera Standard</h2>
+    <p>
+      Panthera Divitiarum is not built for everyone. It is built for the few who are willing to operate with discipline, patience, and strategic intent. Entry is selective, and standards are non-negotiable.
+    </p>
+    <ul class="ethos-list">
+      <li>No gambling. No chasing. No emotional trading.</li>
+      <li>Risk is defined before entry — always.</li>
+      <li>Capital is treated as a strategic asset, not a lottery ticket.</li>
+      <li>We prioritise longevity, not quick wins.</li>
+    </ul>
+  </section>
+
+  <!-- ETHOS SECTION -->
+  <section id="ethos" class="section-wrapper">
+    <span class="pill">Ethos</span>
+    <h2>The House Ethos</h2>
+    <p>
+      Panthera Divitiarum operates as a private house of wealth intelligence. The ethos is simple: move like an institution, think like a strategist, execute like a professional. Every decision is measured, every risk is intentional, and every action serves the long-term positioning of the trader.
+    </p>
+  </section>
+
+  <!-- APPLY SECTION -->
+  <section id="apply" class="section-wrapper">
+    <span class="pill">Application</span>
+    <h2>Apply to the Ascension Programme</h2>
+    <p>
+      Entry into Panthera Divitiarum is by application only. We are not looking for volume. We are looking for alignment — traders who are ready to operate with discipline, respect capital, and commit to a long-term path of refinement.
+    </p>
+    <div class="cta-block">
+      <a href="apply.html" class="cta-btn">Begin Application</a>
+      <a href="mailto:contact@pantheradivitiarum.com" class="cta-btn">Private Enquiry</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© Panthera Divitiarum. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Ensure loader disappears after page load
+    window.addEventListener('load', function () {
+      const loader = document.getElementById('loader');
+      if (!loader) return;
+
+      // Let the logo breathe for a moment, then fade out
+      setTimeout(function () {
+        loader.classList.add('hidden');
+
+        // After the fade-out transition, remove it completely
+        setTimeout(function () {
+          loader.style.display = 'none';
+        }, 700);
+      }, 1500);
+    });
+  </script>
+</body>
+</html>
