@@ -36,6 +36,11 @@
       letter-spacing: 3px;
     }
 
+    p {
+      font-size: 1.05rem;
+      color: #d0d0d0;
+    }
+
     label {
       display: block;
       margin-top: 20px;
@@ -61,6 +66,7 @@
       font-family: 'Cinzel', serif;
       cursor: pointer;
       letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
     .back {
@@ -73,6 +79,10 @@
       color: var(--gold);
       text-decoration: none;
     }
+
+    a:hover {
+      color: #fff;
+    }
   </style>
 </head>
 
@@ -82,21 +92,31 @@
     <h1>Apply for Consideration</h1>
 
     <p>
-      Entry into Panthera Divitiarum is selective. Submit your details below and your application will be reviewed.
+      Entry into Panthera Divitiarum is selective. Submit your application below and it will be reviewed privately.
     </p>
 
-    <form>
+    <form action="https://formsubmit.co/pantherapantheradiviate@outlook.com" method="POST">
+
+      <!-- Disable captcha -->
+      <input type="hidden" name="_captcha" value="false">
+
+      <!-- Redirect after submission -->
+      <input type="hidden" name="_next" value="https://tkaye471-source.github.io/Panthera/thank-you.html">
+
       <label>Your Name</label>
-      <input type="text" placeholder="Enter your full name">
+      <input type="text" name="Name" required>
 
       <label>Email Address</label>
-      <input type="email" placeholder="Enter your email">
+      <input type="email" name="Email" required>
 
       <label>Current Trading Experience</label>
-      <textarea rows="4" placeholder="Describe your trading background"></textarea>
+      <textarea name="Experience" rows="4" required></textarea>
 
       <label>Why do you want to join the Ascension Programme?</label>
-      <textarea rows="4"></textarea>
+      <textarea name="Reason" rows="4" required></textarea>
+
+      <label>Current Account Size / Funded Status</label>
+      <input type="text" name="Account Status" required>
 
       <button type="submit">Submit Application</button>
     </form>
