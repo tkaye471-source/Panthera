@@ -12,6 +12,7 @@
       --brg: #004225;
       --brg-soft: #0a5a3a;
       --brg-dark: #002d18;
+      --silver: #cfcfcf;
       --text-main: #f3f3f3;
       --text-soft: #d4d4d4;
       --border: rgba(0, 66, 37, 0.35);
@@ -34,62 +35,7 @@
       font-weight: 400;
     }
 
-    /* LOADER */
-    #loader {
-      position: fixed;
-      inset: 0;
-      background: #000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      transition: opacity 0.6s ease;
-    }
-    #loader.hidden {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .loader-panther-head {
-      width: 150px;
-      height: 150px;
-      border: 2px solid var(--brg);
-      border-radius: 50%;
-      box-shadow: 0 0 18px var(--brg-dark);
-      animation: breatheGlow 3s ease-in-out infinite;
-      position: relative;
-    }
-
-    .loader-panther-head::before,
-    .loader-panther-head::after {
-      content: "";
-      position: absolute;
-      width: 44px;
-      height: 44px;
-      border: 2px solid var(--brg);
-      border-radius: 50%;
-      top: -20px;
-      background: #000;
-      box-shadow: 0 0 10px var(--brg-dark);
-    }
-
-    .loader-panther-head::before {
-      left: 12px;
-      transform: rotate(-16deg);
-    }
-
-    .loader-panther-head::after {
-      right: 12px;
-      transform: rotate(16deg);
-    }
-
-    @keyframes breatheGlow {
-      0% { box-shadow: 0 0 10px var(--brg-dark); transform: scale(0.98); }
-      50% { box-shadow: 0 0 20px var(--brg-soft); transform: scale(1.02); }
-      100% { box-shadow: 0 0 10px var(--brg-dark); transform: scale(0.98); }
-    }
-
-    /* NAVIGATION (REFINED) */
+    /* NAVIGATION */
     .nav {
       position: sticky;
       top: 0;
@@ -138,141 +84,21 @@
       text-decoration-thickness: 2px;
     }
 
-    /* WATERMARK (SUBTLE) */
-    .panther-watermark {
-      position: fixed;
-      width: 23vw;
-      max-width: 240px;
-      aspect-ratio: 1/1;
-      border-radius: 50%;
-      border: 2px solid var(--brg);
-      top: 20%;
-      right: -8%;
-      opacity: 0.12;
-      pointer-events: none;
-      z-index: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: driftPanther 40s linear infinite;
-    }
-
-    .panther-watermark-inner {
-      width: 70%;
-      height: 70%;
-      border-radius: 50%;
-      border: 2px solid var(--brg-soft);
-      position: relative;
-    }
-
-    .panther-watermark-inner::before,
-    .panther-watermark-inner::after {
-      content: "";
-      position: absolute;
-      width: 24%;
-      height: 24%;
-      border-radius: 3px;
-      border: 2px solid var(--brg-soft);
-      top: -6%;
-      background: rgba(0,0,0,0.9);
-    }
-
-    .panther-watermark-inner::before {
-      left: 10%;
-      transform: rotate(-16deg);
-    }
-
-    .panther-watermark-inner::after {
-      right: 10%;
-      transform: rotate(16deg);
-    }
-
-    @keyframes driftPanther {
-      0% { transform: translate(0,0); }
-      50% { transform: translate(-10%,8%); }
-      100% { transform: translate(0,0); }
-    }
-
-    /* FOOTPRINTS (TONED DOWN) */
-    .panther-footprint {
-      position: fixed;
-      width: 65px;
-      height: 85px;
-      opacity: 0.10;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .panther-footprint::before,
-    .panther-footprint::after {
-      content: "";
-      position: absolute;
-      background: var(--brg);
-      border-radius: 50%;
-    }
-
-    .panther-footprint::before {
-      width: 50px;
-      height: 40px;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      clip-path: polygon(
-        20% 0%, 80% 0%,
-        100% 40%, 80% 100%,
-        20% 100%, 0% 40%
-      );
-    }
-
-    .panther-footprint::after {
-      width: 16px;
-      height: 20px;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      box-shadow:
-        -24px 8px 0 var(--brg),
-        0px 0px 0 var(--brg),
-        24px 8px 0 var(--brg),
-        -12px -4px 0 var(--brg),
-        12px -4px 0 var(--brg);
-    }
-
-    .walking-print {
-      animation: walkAcross 14s linear infinite;
-    }
-
-    @keyframes walkAcross {
-      0% { transform: translate(-20%,110%) rotate(8deg); }
-      100% { transform: translate(120%,-10%) rotate(20deg); }
-    }
-
-    /* HERO + SECTIONS BASE */
+    /* HERO */
     header {
       text-align: center;
-      padding: 90px 20px 70px;
+      padding: 110px 20px 80px;
       border-bottom: 1px solid var(--border);
     }
 
-    .hero-logo {
-      margin-bottom: 18px;
-    }
-
     .hero-logo-img {
-      height: 110px; /* medium size */
+      height: 200px; /* larger, dominant */
       width: auto;
       display: block;
-      margin: 0 auto;
-      filter: drop-shadow(0 0 14px rgba(0,0,0,0.9));
-    }
-
-    h1 {
-      font-size: 3.1rem;
-      color: var(--brg-soft);
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      font-weight: 600;
-      margin-bottom: 10px;
+      margin: 0 auto 25px auto;
+      filter:
+        drop-shadow(0 0 10px rgba(0,66,37,0.45))
+        drop-shadow(0 0 18px rgba(0,0,0,0.9));
     }
 
     .tagline {
@@ -290,6 +116,7 @@
       color: var(--text-soft);
     }
 
+    /* SECTIONS */
     .section-wrapper {
       max-width: 1050px;
       margin: 70px auto;
@@ -408,21 +235,6 @@
 </head>
 <body>
 
-  <!-- LOADER -->
-  <div id="loader">
-    <div class="loader-panther-head"></div>
-  </div>
-
-  <!-- WATERMARK -->
-  <div class="panther-watermark">
-    <div class="panther-watermark-inner"></div>
-  </div>
-
-  <!-- FOOTPRINTS (SUBTLE) -->
-  <div class="panther-footprint walking-print" style="top: 22%; left: -20%; animation-delay: 0s;"></div>
-  <div class="panther-footprint walking-print" style="top: 48%; left: -25%; animation-delay: 4s;"></div>
-  <div class="panther-footprint walking-print" style="top: 72%; left: -30%; animation-delay: 8s;"></div>
-
   <!-- NAVIGATION -->
   <nav class="nav">
     <div class="nav-inner">
@@ -441,11 +253,7 @@
 
   <!-- HERO -->
   <header id="top">
-    <div class="hero-logo">
-      <img src="logo.png" alt="Panthera Divitiarum crest" class="hero-logo-img">
-    </div>
-
-    <h1>PANTHERA DIVITIARUM</h1>
+    <img src="logo.png" alt="Panthera Divitiarum Crest" class="hero-logo-img">
 
     <p class="tagline">Wealth is hunted, not hoped for.</p>
 
@@ -591,21 +399,6 @@
   <footer>
     <p>© Panthera Divitiarum. All rights reserved.</p>
   </footer>
-
-  <!-- LOADER FADE OUT -->
-  <script>
-    window.addEventListener('load', function () {
-      const loader = document.getElementById('loader');
-      if (!loader) return;
-
-      setTimeout(function () {
-        loader.classList.add('hidden');
-        setTimeout(function () {
-          loader.style.display = 'none';
-        }, 700);
-      }, 1400);
-    });
-  </script>
 
 </body>
 </html>
