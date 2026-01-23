@@ -2,216 +2,61 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Panthera Divitiarum</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Panthera Divitiarum – Wealth is hunted, not hoped for." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Roman-inspired typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      background-color: #0b0b0b;
+      color: #d6d6d6;
+      font-family: 'Cinzel', serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    .logo {
+      max-width: 280px;
+      height: auto;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      letter-spacing: 3px;
+      margin: 0;
+    }
+
+    .tagline {
+      margin-top: 12px;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: #9a9a9a;
+    }
+
+    .divider {
+      width: 80px;
+      height: 2px;
+      background: #444;
+      margin: 25px auto;
+    }
+  </style>
 </head>
 
 <body>
-  <!-- HERO -->
-  <header class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-inner">
-      <div class="hero-logo">
-        <img src="panther-logo.png" alt="Panthera Divitiarum Logo" class="panther-logo" />
-      </div>
-      <div class="hero-text">
-        <h1>PANTHERA DIVITIARUM</h1>
-        <p class="hero-slogan">Wealth is hunted, not hoped for.</p>
-        <p class="hero-tagline">
-          Roman-inspired, system-driven trading intelligence for disciplined, high-conviction capital.
-        </p>
-        <div class="hero-actions">
-          <a href="#signals" class="btn primary">View Signal Framework</a>
-          <a href="#track-record" class="btn ghost">Track Record Structure</a>
-        </div>
-      </div>
-    </div>
-  </header>
 
-  <main>
-    <!-- PHILOSOPHY -->
-    <section id="philosophy" class="section section-light">
-      <div class="container">
-        <h2>Philosophy</h2>
-        <div class="grid-2">
-          <div>
-            <p>
-              Panthera Divitiarum is built on a simple premise:
-              <strong>discipline, patience, and precision</strong> are the only sustainable edges in markets.
-            </p>
-            <p>
-              Inspired by Roman order and the panther’s stealth, every position is treated as a calculated hunt,
-              never a gamble. The focus is on clean execution, asymmetric risk, and long-term credibility.
-            </p>
-          </div>
-          <div>
-            <ul class="pillars">
-              <li><span>Discipline</span> – rules first, emotion last.</li>
-              <li><span>Patience</span> – waiting for high-conviction setups.</li>
-              <li><span>Precision</span> – defined entries, stops, and targets.</li>
-              <li><span>Transparency</span> – every decision is documented.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+  <img src="logo.png" alt="Panthera Divitiarum Logo" class="logo">
 
-    <!-- SIGNAL FRAMEWORK -->
-    <section id="signals" class="section section-dark">
-      <div class="container">
-        <h2>Signal Framework</h2>
-        <p class="section-intro">
-          Signals are delivered with institutional formatting—no hype, no noise, only structured information.
-        </p>
-        <div class="grid-2">
-          <div>
-            <h3>Standard Signal Format</h3>
-            <div class="card">
-              <pre class="code-block">
-Asset: EUR/USD
-Direction: Long
-Entry: 1.0850
-Stop: 1.0805
-Targets: 1.0920 / 1.0980
+  <h1>PANTHERA DIVITIARUM</h1>
+  <div class="divider"></div>
+  <p class="tagline">Wealth is hunted, not hoped for.</p>
 
-Rationale:
-Daily trend aligned with 4H structure.
-Liquidity sweep into demand, confluence with key level.
-              </pre>
-            </div>
-            <p class="note">
-              Every signal is timestamped and archived to build a verifiable track record over time.
-            </p>
-          </div>
-          <div>
-            <h3>Delivery Channels</h3>
-            <ul class="list">
-              <li><strong>Telegram Desk:</strong> real-time signal delivery and brief commentary.</li>
-              <li><strong>TradingView:</strong> chart-backed ideas with public timestamps.</li>
-              <li><strong>Internal Log:</strong> structured performance tracking for future investors.</li>
-            </ul>
-            <p>
-              The goal is to construct a <strong>multi-year ledger of discipline</strong> that can be presented
-              to high-net-worth individuals and institutions.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TRACK RECORD -->
-    <section id="track-record" class="section section-light">
-      <div class="container">
-        <h2>Track Record Structure</h2>
-        <p class="section-intro">
-          Before capital comes credibility. The focus is on building a clean, auditable history of decisions.
-        </p>
-        <div class="grid-2">
-          <div>
-            <h3>Key Metrics Tracked</h3>
-            <ul class="list">
-              <li><strong>Win rate</strong> by setup type.</li>
-              <li><strong>Average R-multiple</strong> per trade.</li>
-              <li><strong>Max drawdown</strong> and recovery time.</li>
-              <li><strong>Equity curve</strong> over months and years.</li>
-            </ul>
-            <p>
-              These metrics speak the language of serious capital—risk, consistency, and robustness over time.
-            </p>
-          </div>
-          <div>
-            <h3>Example Monthly Summary</h3>
-            <div class="card">
-              <pre class="code-block">
-Month: April 2026
-Total Trades: 42
-Win Rate: 57%
-Average R: 1.85R
-Max Drawdown: -4.2R
-
-Comment:
-Stable month with controlled risk.
-No outsized losses, no emotional deviation from plan.
-              </pre>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FUTURE INVESTORS -->
-    <section id="investors" class="section section-dark">
-      <div class="container">
-        <h2>For Future Investors</h2>
-        <p class="section-intro">
-          Panthera Divitiarum is being built with a long horizon: a documented history that can justify serious
-          allocations when the time is right.
-        </p>
-        <div class="grid-2">
-          <div>
-            <h3>What You Will See</h3>
-            <ul class="list">
-              <li>Consistent methodology, not style drift.</li>
-              <li>Clear risk frameworks and position sizing logic.</li>
-              <li>Evidence of restraint during low-quality conditions.</li>
-              <li>Measured growth, not reckless leverage.</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Current Status</h3>
-            <p>
-              The operation is focused on building a verifiable track record via
-              <strong>Telegram</strong>, <strong>TradingView</strong>, and internal logs.
-              Capital conversations are reserved for a later stage, once the data speaks for itself.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section section-light">
-      <div class="container">
-        <h2>Contact</h2>
-        <p class="section-intro">
-          For future capital discussions or professional inquiries, use the contact details below.
-        </p>
-        <div class="grid-2">
-          <div>
-            <ul class="list">
-              <li><strong>Telegram Desk:</strong> @PantheraDivitiarum</li>
-              <li><strong>Email:</strong> contact@pantheradivitiarum.com</li>
-            </ul>
-            <p class="note">
-              Replace these placeholders with your real Telegram handle and email when ready.
-            </p>
-          </div>
-          <div>
-            <p>
-              This site is intentionally minimal. The focus is on
-              <strong>substance over spectacle</strong>—a quiet record of discipline, not marketing noise.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <span>&copy; <span id="year"></span> Panthera Divitiarum. All rights reserved.</span>
-      <span class="footer-tagline">Discipline. Patience. Precision.</span>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
