@@ -564,16 +564,16 @@
   </footer>
 
   <script>
-    // Ensure loader disappears after page load
+    // Hide loader after page load
     window.addEventListener('load', function () {
       const loader = document.getElementById('loader');
       if (!loader) return;
 
-      // Let the logo breathe for a moment, then fade out
+      // Let the logo breathe briefly, then fade out
       setTimeout(function () {
         loader.classList.add('hidden');
 
-        // After the fade-out transition, remove it completely
+        // After fade-out transition, remove it
         setTimeout(function () {
           loader.style.display = 'none';
         }, 700);
