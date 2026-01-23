@@ -7,24 +7,280 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --gold: #c9a86a;
+      --gold-soft: #e3cfa0;
+      --gold-dark: #8a6b3d;
+      --border: rgba(201, 168, 106, 0.25);
+      --bg: #050505;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       margin: 0;
-      background: radial-gradient(circle at top, #1b1f1b 0%, #050505 55%, #000 100%);
+      background: radial-gradient(circle at top, #151515 0%, #050505 55%, #000 100%);
       color: #e0e0e0;
       font-family: 'Cinzel', serif;
       line-height: 1.7;
+      overflow-x: hidden;
     }
 
-    :root {
-      --gold: #c9a86a;
-      --gold-dark: #8a6b3d;
-      --border: rgba(201, 168, 106, 0.25);
+    a {
+      color: var(--gold);
+      text-decoration: none;
     }
 
+    a:hover {
+      color: #ffffff;
+    }
+
+    /* LOADING SCREEN */
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.6s ease;
+    }
+
+    #loader.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .loader-panther {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,168,106,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .loader-panther::before {
+      content: "";
+      position: absolute;
+      inset: 18%;
+      border-radius: 50%;
+      border: 1px solid rgba(201,168,106,0.3);
+    }
+
+    .loader-panther-head {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      position: relative;
+      opacity: 0;
+      animation: loaderFade 2.5s ease-in-out infinite;
+    }
+
+    .loader-panther-head::before,
+    .loader-panther-head::after {
+      content: "";
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      border-radius: 4px;
+      border: 2px solid var(--gold);
+      top: -6px;
+      background: #000;
+    }
+
+    .loader-panther-head::before {
+      left: 6px;
+      transform: rotate(-18deg);
+    }
+
+    .loader-panther-head::after {
+      right: 6px;
+      transform: rotate(18deg);
+    }
+
+    @keyframes loaderFade {
+      0% { opacity: 0; transform: scale(0.9); }
+      40% { opacity: 1; transform: scale(1); }
+      80% { opacity: 0.4; transform: scale(1.02); }
+      100% { opacity: 0; transform: scale(0.98); }
+    }
+
+    /* NAVBAR */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(0,0,0,0.9);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(6px);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-size: 1rem;
+      letter-spacing: 4px;
+      color: var(--gold-soft);
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* FOOTPRINT ANIMATION */
+    .panther-footprint {
+      position: fixed;
+      width: 70px;
+      height: 90px;
+      opacity: 0.12;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .panther-footprint::before,
+    .panther-footprint::after {
+      content: "";
+      position: absolute;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    .panther-footprint::before {
+      width: 55px;
+      height: 45px;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      clip-path: polygon(20% 0%, 80% 0%, 100% 40%, 80% 100%, 20% 100%, 0% 40%);
+    }
+
+    .panther-footprint::after {
+      width: 18px;
+      height: 22px;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow:
+        -28px 10px 0 var(--gold),
+        0px 0px 0 var(--gold),
+        28px 10px 0 var(--gold),
+        -14px -5px 0 var(--gold),
+        14px -5px 0 var(--gold);
+    }
+
+    .walking-print {
+      animation: walkAcross 12s linear infinite;
+    }
+
+    @keyframes walkAcross {
+      0% { transform: translate(-10%, 110%) rotate(10deg); }
+      100% { transform: translate(110%, -10%) rotate(25deg); }
+    }
+
+    /* DRIFTING PANTHER HEAD WATERMARK */
+    .panther-watermark {
+      position: fixed;
+      width: 25vw;
+      max-width: 260px;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      border: 1px solid rgba(201,168,106,0.25);
+      top: 18%;
+      right: -10%;
+      opacity: 0.12;
+      pointer-events: none;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: driftPanther 40s linear infinite;
+    }
+
+    .panther-watermark-inner {
+      width: 70%;
+      height: 70%;
+      border-radius: 50%;
+      border: 2px solid rgba(201,168,106,0.6);
+      position: relative;
+    }
+
+    .panther-watermark-inner::before,
+    .panther-watermark-inner::after {
+      content: "";
+      position: absolute;
+      width: 26%;
+      height: 26%;
+      border-radius: 4px;
+      border: 2px solid rgba(201,168,106,0.7);
+      top: -6%;
+      background: rgba(0,0,0,0.9);
+    }
+
+    .panther-watermark-inner::before {
+      left: 10%;
+      transform: rotate(-18deg);
+    }
+
+    .panther-watermark-inner::after {
+      right: 10%;
+      transform: rotate(18deg);
+    }
+
+    @keyframes driftPanther {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(-12%, 10%); }
+      100% { transform: translate(0, 0); }
+    }
+
+    /* HERO */
     header {
       text-align: center;
-      padding: 80px 20px 50px;
+      padding: 90px 20px 60px;
       border-bottom: 2px solid var(--border);
+      position: relative;
+      z-index: 5;
     }
 
     .logo {
@@ -40,6 +296,7 @@
       letter-spacing: 4px;
       color: var(--gold);
       text-shadow: 0 0 10px rgba(201,168,106,0.3);
+      animation: fadeInUp 1s ease-out;
     }
 
     .tagline {
@@ -47,6 +304,7 @@
       font-style: italic;
       color: #b8b8b8;
       margin-top: 12px;
+      animation: fadeInUp 1.2s ease-out;
     }
 
     .subtag {
@@ -55,18 +313,23 @@
       color: #8f8f8f;
       letter-spacing: 1px;
       text-transform: uppercase;
+      animation: fadeInUp 1.4s ease-out;
     }
 
+    /* SECTIONS */
     .section-wrapper {
       max-width: 980px;
       margin: 60px auto;
       padding: 40px 30px;
       border-left: 4px solid var(--gold-dark);
       border-right: 4px solid var(--gold-dark);
-      background: linear-gradient(135deg, rgba(11,42,27,0.35), rgba(0,0,0,0.85));
+      background: linear-gradient(135deg, rgba(10,10,10,0.9), rgba(0,0,0,0.95));
       backdrop-filter: blur(4px);
-      box-shadow: 0 0 25px rgba(0,0,0,0.6);
+      box-shadow: 0 0 25px rgba(0,0,0,0.7);
       position: relative;
+      z-index: 5;
+      overflow: hidden;
+      animation: fadeInSection 0.9s ease-out;
     }
 
     .section-wrapper::before,
@@ -75,7 +338,7 @@
       position: absolute;
       left: 0;
       right: 0;
-      height: 12px;
+      height: 10px;
       background: repeating-linear-gradient(
         90deg,
         var(--gold-dark),
@@ -88,21 +351,27 @@
     .section-wrapper::before { top: 0; }
     .section-wrapper::after { bottom: 0; }
 
-    h2 {
+    .section-wrapper h2 {
       font-size: 2rem;
       margin-bottom: 15px;
-      color: var(--gold);
+      color: var(--gold-soft);
       text-transform: uppercase;
       letter-spacing: 2px;
+      position: relative;
     }
 
-    h3 {
-      font-size: 1.3rem;
-      margin-bottom: 8px;
-      color: #e8e0cf;
+    .section-wrapper h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 80px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      animation: shimmer 3s linear infinite;
     }
 
-    p {
+    .section-wrapper p {
       font-size: 1.05rem;
       color: #d0d0d0;
     }
@@ -117,6 +386,7 @@
       letter-spacing: 1px;
       text-transform: uppercase;
       margin-bottom: 15px;
+      background: rgba(0,0,0,0.7);
     }
 
     .stage-grid {
@@ -130,8 +400,19 @@
       border: 1px solid var(--border);
       padding: 18px 16px;
       border-radius: 6px;
-      background: rgba(0,0,0,0.55);
-      box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+      background: rgba(5,5,5,0.9);
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.7);
+    }
+
+    .stage-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: var(--gold-soft);
+    }
+
+    .stage-card p {
+      font-size: 0.98rem;
+      color: #d6d6d6;
     }
 
     .ethos-list {
@@ -161,11 +442,13 @@
       letter-spacing: 1px;
       text-transform: uppercase;
       background: rgba(0,0,0,0.7);
+      transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
     }
 
     .cta-btn:hover {
       background: var(--gold);
       color: #000;
+      transform: translateY(-1px);
     }
 
     footer {
@@ -175,31 +458,86 @@
       color: #777;
       border-top: 2px solid var(--border);
       margin-top: 80px;
+      z-index: 5;
+      position: relative;
+      background: rgba(0,0,0,0.9);
     }
 
-    a {
-      color: var(--gold);
-      text-decoration: none;
+    /* ANIMATIONS */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    a:hover {
-      color: #fff;
+    @keyframes fadeInSection {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    @media (max-width: 600px) {
+    @keyframes shimmer {
+      0% { opacity: 0.3; transform: translateX(-10px); }
+      50% { opacity: 1; transform: translateX(10px); }
+      100% { opacity: 0.3; transform: translateX(-10px); }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
       h1 { font-size: 2.4rem; }
+      header { padding: 70px 16px 40px; }
       .section-wrapper {
         margin: 40px 12px;
         padding: 30px 18px;
+      }
+      .nav-inner {
+        flex-direction: column;
+        gap: 8px;
+      }
+      .nav-links {
+        gap: 14px;
+        font-size: 0.8rem;
+      }
+      .panther-watermark {
+        width: 40vw;
+        top: 25%;
+        right: -20%;
       }
     }
   </style>
 </head>
 
 <body>
+  <!-- LOADING SCREEN -->
+  <div id="loader">
+    <div class="loader-panther">
+      <div class="loader-panther-head"></div>
+    </div>
+  </div>
+
+  <!-- DRIFTING PANTHER WATERMARK -->
+  <div class="panther-watermark">
+    <div class="panther-watermark-inner"></div>
+  </div>
+
+  <!-- FOOTPRINTS -->
+  <div class="panther-footprint walking-print" style="top: 20%; left: -15%; animation-delay: 0s;"></div>
+  <div class="panther-footprint walking-print" style="top: 45%; left: -20%; animation-delay: 4s;"></div>
+  <div class="panther-footprint walking-print" style="top: 70%; left: -25%; animation-delay: 8s;"></div>
+
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="nav-logo">PANTHERA DIVITIARUM</div>
+      <div class="nav-links">
+        <a href="#top">Home</a>
+        <a href="#programme">Programme</a>
+        <a href="#standards">Standards</a>
+        <a href="#apply">Apply</a>
+      </div>
+    </div>
+  </nav>
 
   <!-- HERO -->
-  <header>
+  <header id="top">
     <img src="logo.png" alt="Panthera Divitiarum Logo" class="logo">
     <h1>PANTHERA DIVITIARUM</h1>
     <p class="tagline">Wealth is hunted, not hoped for.</p>
@@ -207,7 +545,7 @@
   </header>
 
   <!-- THE HOUSE -->
-  <div class="section-wrapper">
+  <section class="section-wrapper">
     <span class="pill">The House</span>
     <h2>Panthera Divitiarum</h2>
     <p>
@@ -215,10 +553,10 @@
       Inspired by Roman principles of structure, hierarchy, and strategic power, we transform serious traders
       into high‑capital professionals who operate with precision—not hope.
     </p>
-  </div>
+  </section>
 
   <!-- PHILOSOPHY -->
-  <div class="section-wrapper">
+  <section class="section-wrapper">
     <span class="pill">Philosophy</span>
     <h2>The Identity of the House</h2>
     <p>
@@ -226,10 +564,10 @@
       mediocrity and pursue mastery with intention. Every trader is shaped with precision. Every advancement
       is earned. Every result is built on discipline and structure.
     </p>
-  </div>
+  </section>
 
   <!-- DISTINCTION -->
-  <div class="section-wrapper">
+  <section class="section-wrapper">
     <span class="pill">Distinction</span>
     <h2>What Sets Panthera Apart</h2>
     <ul class="ethos-list">
@@ -240,10 +578,10 @@
       <li>Guidance through funded payouts into elite live trading.</li>
       <li>A long-term wealth-building philosophy rooted in discipline and clarity.</li>
     </ul>
-  </div>
+  </section>
 
   <!-- ASCENSION MODEL -->
-  <div class="section-wrapper">
+  <section class="section-wrapper" id="programme">
     <span class="pill">The Programme</span>
     <h2>The Ascension Model</h2>
     <p>
@@ -267,10 +605,10 @@
         <p>Trade 1–2 lots with precision, generating consistent monthly returns.</p>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- PROGRESSION PATH -->
-  <div class="section-wrapper">
+  <section class="section-wrapper">
     <span class="pill">Progression</span>
     <h2>Your Path Through the House</h2>
     <p>The journey from novice to elite trader is intentional and structured:</p>
@@ -296,10 +634,10 @@
         <p>Operate as a fully independent trader with long-term wealth-building systems.</p>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- STANDARDS -->
-  <div class="section-wrapper">
+  <section class="section-wrapper" id="standards">
     <span class="pill">Standards</span>
     <h2>Expectations of Every Trader</h2>
     <p>
@@ -314,10 +652,10 @@
       <li>Willingness to be coached and corrected.</li>
       <li>Dedication to consistent improvement.</li>
     </ul>
-  </div>
+  </section>
 
   <!-- HOUSE CODE -->
-  <div class="section-wrapper">
+  <section class="section-wrapper">
     <span class="pill">The Code</span>
     <h2>The House Principles</h2>
     <ul class="ethos-list">
@@ -327,10 +665,10 @@
       <li>Precision over prediction.</li>
       <li>Legacy over luck.</li>
     </ul>
-  </div>
+  </section>
 
   <!-- WHY 20K -->
-  <div class="section-wrapper">
+  <section class="section-wrapper">
     <span class="pill">Capital</span>
     <h2>Why £20,000 Is the Threshold</h2>
     <p>
@@ -341,10 +679,10 @@
       This is the capital base required to trade professionally, sustainably, and with the confidence of a true
       independent operator.
     </p>
-  </div>
+  </section>
 
   <!-- ELIGIBILITY -->
-  <div class="section-wrapper">
+  <section class="section-wrapper">
     <span class="pill">Eligibility</span>
     <h2>Who We Accept</h2>
     <p>
@@ -358,10 +696,10 @@
       <li>Are committed to reaching £20,000+ capital.</li>
       <li>Seek long-term mastery, not shortcuts.</li>
     </ul>
-  </div>
+  </section>
 
   <!-- APPLY CTA -->
-  <div class="section-wrapper">
+  <section class="section-wrapper" id="apply">
     <span class="pill">Access</span>
     <h2>Apply for Consideration</h2>
     <p>
@@ -372,11 +710,20 @@
     <div class="cta-block">
       <a href="apply.html" class="cta-btn">Apply for Consideration</a>
     </div>
-  </div>
+  </section>
 
   <footer>
     &copy; 2026 Panthera Divitiarum. All rights reserved.
   </footer>
 
+  <script>
+    // Hide loader after 2.5 seconds
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const loader = document.getElementById('loader');
+        if (loader) loader.classList.add('hidden');
+      }, 2500);
+    });
+  </script>
 </body>
 </html>
