@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Panthera Divitiarum</title>
+  <title>Panthera Divitiarum — Ascension Programme</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
     body {
       margin: 0;
-      background: linear-gradient(180deg, #0a0a0a 0%, #111 100%);
+      background: radial-gradient(circle at top, #1b1f1b 0%, #050505 55%, #000 100%);
       color: #e0e0e0;
       font-family: 'Cinzel', serif;
       line-height: 1.7;
     }
 
-    /* Roman gold accent */
     :root {
       --gold: #c9a86a;
       --gold-dark: #8a6b3d;
       --border: rgba(201, 168, 106, 0.25);
+      --green-deep: #0b2a1b;
     }
 
     header {
@@ -32,7 +32,7 @@
       max-width: 260px;
       height: auto;
       margin-bottom: 20px;
-      filter: drop-shadow(0 0 12px rgba(201,168,106,0.25));
+      filter: drop-shadow(0 0 14px rgba(201,168,106,0.35));
     }
 
     h1 {
@@ -50,20 +50,26 @@
       margin-top: 12px;
     }
 
-    /* Roman column inspired section wrapper */
+    .subtag {
+      margin-top: 8px;
+      font-size: 0.95rem;
+      color: #8f8f8f;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
     .section-wrapper {
-      max-width: 900px;
+      max-width: 980px;
       margin: 60px auto;
       padding: 40px 30px;
       border-left: 4px solid var(--gold-dark);
       border-right: 4px solid var(--gold-dark);
-      background: rgba(255, 255, 255, 0.02);
+      background: linear-gradient(135deg, rgba(11,42,27,0.35), rgba(0,0,0,0.85));
       backdrop-filter: blur(4px);
-      box-shadow: 0 0 25px rgba(0,0,0,0.4);
+      box-shadow: 0 0 25px rgba(0,0,0,0.6);
       position: relative;
     }
 
-    /* Decorative Roman top/bottom frieze */
     .section-wrapper::before,
     .section-wrapper::after {
       content: "";
@@ -96,18 +102,76 @@
       letter-spacing: 2px;
     }
 
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+      color: #e8e0cf;
+    }
+
     p {
       font-size: 1.05rem;
       color: #d0d0d0;
     }
 
-    .tier-box {
+    .pill {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--gold-dark);
+      color: var(--gold);
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .stage-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .stage-card {
       border: 1px solid var(--border);
-      padding: 20px;
-      margin: 20px 0;
+      padding: 18px 16px;
       border-radius: 6px;
-      background: rgba(255, 255, 255, 0.03);
-      box-shadow: inset 0 0 10px rgba(0,0,0,0.4);
+      background: rgba(0,0,0,0.55);
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .ethos-list {
+      margin-top: 10px;
+      padding-left: 18px;
+    }
+
+    .ethos-list li {
+      margin-bottom: 6px;
+      color: #d6d6d6;
+    }
+
+    .cta-block {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      margin: 8px 10px;
+      padding: 10px 22px;
+      border-radius: 999px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: rgba(0,0,0,0.7);
+    }
+
+    .cta-btn:hover {
+      background: var(--gold);
+      color: #000;
     }
 
     footer {
@@ -127,6 +191,16 @@
     a:hover {
       color: #fff;
     }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.4rem;
+      }
+      .section-wrapper {
+        margin: 40px 12px;
+        padding: 30px 18px;
+      }
+    }
   </style>
 </head>
 
@@ -134,89 +208,110 @@
 
   <!-- HERO -->
   <header>
-    <img src="logo.png?v=3" alt="Panthera Divitiarum Logo" class="logo">
+    <img src="logo.png?v=4" alt="Panthera Divitiarum Logo" class="logo">
     <h1>PANTHERA DIVITIARUM</h1>
     <p class="tagline">Wealth is hunted, not hoped for.</p>
+    <p class="subtag">Private Wealth Intelligence • Ascension Trading Programme</p>
   </header>
 
-  <!-- ABOUT -->
+  <!-- ABOUT / CORE PHILOSOPHY -->
   <div class="section-wrapper">
-    <h2>About Panthera Divitiarum</h2>
+    <span class="pill">The House</span>
+    <h2>Panthera Divitiarum</h2>
     <p>
-      Panthera Divitiarum is a private wealth intelligence house built for disciplined traders and strategic investors.
-      Inspired by Roman legacy, we combine precision, structure, and elite analysis to deliver signals that cut through
-      market noise. Our mission is simple: empower individuals who refuse to leave wealth to chance.
+      Panthera Divitiarum is a private wealth intelligence house built for disciplined, high‑intent traders.
+      Inspired by Roman principles of structure, hierarchy, and strategic power, we exist to transform serious
+      traders into high‑capital professionals who operate with precision—not hope.
+    </p>
+    <p>
+      This is not a public signals group. It is an elevation system for traders who are prepared to move from
+      survival to sovereignty.
     </p>
   </div>
 
-  <!-- SIGNALS -->
+  <!-- ASCENSION PROGRAMME -->
   <div class="section-wrapper">
-    <h2>Signal Intelligence Suite</h2>
+    <span class="pill">The Programme</span>
+    <h2>The Ascension Model</h2>
     <p>
-      Our signals are engineered through multi‑layered analysis, institutional‑grade data, and proprietary momentum
-      frameworks. Each alert is designed to give you clarity, confidence, and a tactical edge.
+      Our Ascension Programme is a three‑stage framework designed to take traders from funded challenges to
+      £20,000+ personal capital and beyond. Every stage is intentional. Every advancement is earned.
     </p>
 
-    <div class="tier-box">
-      <h3>Momentum Signals</h3>
-      <p>High‑probability entries based on velocity, volume convergence, and trend strength.</p>
-    </div>
+    <div class="stage-grid">
+      <div class="stage-card">
+        <h3>Stage I — Funded Mastery</h3>
+        <p>
+          Traders begin by mastering funded accounts. We provide structure, strategy, and psychological frameworks
+          to secure consistent payouts from proprietary firms—without risking personal capital.
+        </p>
+        <p>
+          The objective: build discipline, confidence, and a verifiable track record under pressure.
+        </p>
+      </div>
 
-    <div class="tier-box">
-      <h3>Macro Pulse</h3>
-      <p>Weekly macroeconomic briefings with actionable positioning guidance across indices, FX, and commodities.</p>
-    </div>
+      <div class="stage-card">
+        <h3>Stage II — Capital Expansion</h3>
+        <p>
+          Funded payouts are systematically channelled into personal capital. Our target is clear:
+          elevate each trader to a minimum of <strong>£20,000</strong> in their own live trading balance.
+        </p>
+        <p>
+          At this level, traders can operate with 1–2 lot positions while maintaining controlled risk.
+        </p>
+      </div>
 
-    <div class="tier-box">
-      <h3>Volatility Triggers</h3>
-      <p>Breakout and reversal alerts that identify explosive moves before they unfold.</p>
-    </div>
-
-    <div class="tier-box">
-      <h3>Legacy Signals</h3>
-      <p>Long‑term compounding setups built on Roman‑style discipline and strategic patience.</p>
-    </div>
-  </div>
-
-  <!-- MEMBERSHIP -->
-  <div class="section-wrapper">
-    <h2>Membership Tiers</h2>
-
-    <div class="tier-box">
-      <h3>Initiate — Free</h3>
-      <p>Weekly macro pulse + limited signal access. Ideal for newcomers to the Panthera ecosystem.</p>
-    </div>
-
-    <div class="tier-box">
-      <h3>Legatus — Premium</h3>
-      <p>Full signal suite, Discord access, priority updates, and advanced market breakdowns.</p>
-    </div>
-
-    <div class="tier-box">
-      <h3>Imperator — Elite</h3>
-      <p>Bespoke strategy calls, private briefings, legacy setups, and direct intelligence access.</p>
+      <div class="stage-card">
+        <h3>Stage III — Elite Live Trading</h3>
+        <p>
+          With capital established, traders transition into elite live accounts with top‑tier brokers.
+          Here, they trade with professional structure, generate consistent monthly returns, and build
+          long‑term personal wealth—not just payouts.
+        </p>
+      </div>
     </div>
   </div>
 
   <!-- ETHOS -->
   <div class="section-wrapper">
-    <h2>Our Ethos</h2>
+    <span class="pill">Ethos</span>
+    <h2>Not for Everyone</h2>
     <p>
-      Panthera Divitiarum is not for everyone. We serve those who value discipline over emotion, clarity over chaos,
-      and legacy over luck. Wealth is not discovered — it is hunted with precision, strategy, and unwavering intent.
+      Panthera Divitiarum is intentionally exclusive. We work with traders who value discipline over emotion,
+      clarity over chaos, and legacy over luck.
+    </p>
+    <ul class="ethos-list">
+      <li>Traders who are prepared to treat this as a profession, not a pastime.</li>
+      <li>Traders who understand that capital is built, not gifted.</li>
+      <li>Traders who want to graduate from funded payouts to true personal wealth.</li>
+    </ul>
+    <p>
+      Our goal is simple: forge a network of elite traders operating at £20,000+ balances with structured,
+      repeatable processes and a long‑term horizon.
     </p>
   </div>
 
-  <!-- CONTACT -->
+  <!-- ACCESS / CONTACT -->
   <div class="section-wrapper">
-    <h2>Contact & Access</h2>
+    <span class="pill">Access</span>
+    <h2>Entry to the House</h2>
     <p>
-      Ready to join the hunt? Connect with us through our private channels:
+      Entry into Panthera Divitiarum is selective. We prioritise traders who already demonstrate discipline,
+      self‑awareness, and a willingness to be coached at a high standard.
     </p>
     <p>
-      Telegram: <a href="#">Request Access</a><br>
-      Discord: <a href="#">Join Community</a><br>
-      Email: <a href="#">contact@pantheradivitiarum.com</a>
+      If you are currently trading funded challenges, scaling payouts, or preparing to transition into
+      serious live capital, you may be a fit for the Ascension Programme.
+    </p>
+
+    <div class="cta-block">
+      <a href="#" class="cta-btn">Request Programme Details</a>
+      <a href="#" class="cta-btn">Apply for Consideration</a>
+    </div>
+
+    <p style="text-align:center; margin-top:18px;">
+      For private enquiries:<br>
+      Email: <a href="mailto:contact@pantheradivitiarum.com">contact@pantheradivitiarum.com</a>
     </p>
   </div>
 
