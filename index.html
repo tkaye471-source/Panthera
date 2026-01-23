@@ -9,60 +9,105 @@
   <style>
     body {
       margin: 0;
-      background-color: #0b0b0b;
-      color: #d6d6d6;
+      background: linear-gradient(180deg, #0a0a0a 0%, #111 100%);
+      color: #e0e0e0;
       font-family: 'Cinzel', serif;
       line-height: 1.7;
     }
 
+    /* Roman gold accent */
+    :root {
+      --gold: #c9a86a;
+      --gold-dark: #8a6b3d;
+      --border: rgba(201, 168, 106, 0.25);
+    }
+
     header {
       text-align: center;
-      padding: 70px 20px 40px;
+      padding: 80px 20px 50px;
+      border-bottom: 2px solid var(--border);
     }
 
     .logo {
       max-width: 260px;
       height: auto;
       margin-bottom: 20px;
+      filter: drop-shadow(0 0 12px rgba(201,168,106,0.25));
     }
 
     h1 {
-      font-size: 3rem;
+      font-size: 3.2rem;
       margin: 0;
-      letter-spacing: 3px;
+      letter-spacing: 4px;
+      color: var(--gold);
+      text-shadow: 0 0 10px rgba(201,168,106,0.3);
     }
 
     .tagline {
       font-size: 1.2rem;
       font-style: italic;
-      color: #999;
-      margin-top: 10px;
+      color: #b8b8b8;
+      margin-top: 12px;
     }
 
-    section {
+    /* Roman column inspired section wrapper */
+    .section-wrapper {
       max-width: 900px;
-      margin: 50px auto;
-      padding: 0 20px;
+      margin: 60px auto;
+      padding: 40px 30px;
+      border-left: 4px solid var(--gold-dark);
+      border-right: 4px solid var(--gold-dark);
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(4px);
+      box-shadow: 0 0 25px rgba(0,0,0,0.4);
+      position: relative;
+    }
+
+    /* Decorative Roman top/bottom frieze */
+    .section-wrapper::before,
+    .section-wrapper::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 12px;
+      background: repeating-linear-gradient(
+        90deg,
+        var(--gold-dark),
+        var(--gold-dark) 10px,
+        transparent 10px,
+        transparent 20px
+      );
+    }
+
+    .section-wrapper::before {
+      top: 0;
+    }
+
+    .section-wrapper::after {
+      bottom: 0;
     }
 
     h2 {
       font-size: 2rem;
-      margin-bottom: 12px;
-      border-bottom: 1px solid #444;
-      padding-bottom: 6px;
+      margin-bottom: 15px;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
 
     p {
       font-size: 1.05rem;
-      color: #ccc;
+      color: #d0d0d0;
     }
 
     .tier-box {
-      border: 1px solid #333;
+      border: 1px solid var(--border);
       padding: 20px;
       margin: 20px 0;
       border-radius: 6px;
-      background: #111;
+      background: rgba(255, 255, 255, 0.03);
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.4);
     }
 
     footer {
@@ -70,12 +115,12 @@
       padding: 40px 20px;
       font-size: 0.9rem;
       color: #777;
-      border-top: 1px solid #333;
-      margin-top: 60px;
+      border-top: 2px solid var(--border);
+      margin-top: 80px;
     }
 
     a {
-      color: #aaa;
+      color: var(--gold);
       text-decoration: none;
     }
 
@@ -89,23 +134,23 @@
 
   <!-- HERO -->
   <header>
-    <img src="logo.png?v=2" alt="Panthera Divitiarum Logo" class="logo">
+    <img src="logo.png?v=3" alt="Panthera Divitiarum Logo" class="logo">
     <h1>PANTHERA DIVITIARUM</h1>
     <p class="tagline">Wealth is hunted, not hoped for.</p>
   </header>
 
   <!-- ABOUT -->
-  <section>
+  <div class="section-wrapper">
     <h2>About Panthera Divitiarum</h2>
     <p>
       Panthera Divitiarum is a private wealth intelligence house built for disciplined traders and strategic investors.
       Inspired by Roman legacy, we combine precision, structure, and elite analysis to deliver signals that cut through
       market noise. Our mission is simple: empower individuals who refuse to leave wealth to chance.
     </p>
-  </section>
+  </div>
 
   <!-- SIGNALS -->
-  <section>
+  <div class="section-wrapper">
     <h2>Signal Intelligence Suite</h2>
     <p>
       Our signals are engineered through multi‑layered analysis, institutional‑grade data, and proprietary momentum
@@ -131,10 +176,10 @@
       <h3>Legacy Signals</h3>
       <p>Long‑term compounding setups built on Roman‑style discipline and strategic patience.</p>
     </div>
-  </section>
+  </div>
 
   <!-- MEMBERSHIP -->
-  <section>
+  <div class="section-wrapper">
     <h2>Membership Tiers</h2>
 
     <div class="tier-box">
@@ -151,10 +196,33 @@
       <h3>Imperator — Elite</h3>
       <p>Bespoke strategy calls, private briefings, legacy setups, and direct intelligence access.</p>
     </div>
-  </section>
+  </div>
 
   <!-- ETHOS -->
-  <section>
+  <div class="section-wrapper">
     <h2>Our Ethos</h2>
     <p>
-      Panthera Divitiarum is not
+      Panthera Divitiarum is not for everyone. We serve those who value discipline over emotion, clarity over chaos,
+      and legacy over luck. Wealth is not discovered — it is hunted with precision, strategy, and unwavering intent.
+    </p>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="section-wrapper">
+    <h2>Contact & Access</h2>
+    <p>
+      Ready to join the hunt? Connect with us through our private channels:
+    </p>
+    <p>
+      Telegram: <a href="#">Request Access</a><br>
+      Discord: <a href="#">Join Community</a><br>
+      Email: <a href="#">contact@pantheradivitiarum.com</a>
+    </p>
+  </div>
+
+  <footer>
+    &copy; 2026 Panthera Divitiarum. All rights reserved.
+  </footer>
+
+</body>
+</html>
