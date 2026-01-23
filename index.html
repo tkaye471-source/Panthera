@@ -109,28 +109,6 @@
     }
 
     .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .nav-logo-mark {
-      width: 26px;
-      height: 32px;
-      border-radius: 3px;
-      border: 2px solid var(--brg);
-      position: relative;
-    }
-
-    .nav-logo-mark::before {
-      content: "";
-      position: absolute;
-      inset: 4px;
-      border-radius: 2px;
-      border: 2px solid var(--brg-soft);
-    }
-
-    .nav-logo-text {
       font-size: 0.95rem;
       letter-spacing: 3px;
       color: var(--text-main);
@@ -277,48 +255,15 @@
     }
 
     .hero-logo {
-      display: inline-flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
       margin-bottom: 18px;
     }
 
-    .hero-crest {
-      width: 70px;
-      height: 90px;
-      border-radius: 4px;
-      border: 2px solid var(--brg);
-      position: relative;
-      box-shadow: 0 0 14px rgba(0,0,0,0.8);
-    }
-
-    .hero-crest::before {
-      content: "";
-      position: absolute;
-      inset: 6px;
-      border-radius: 3px;
-      border: 2px solid var(--brg-soft);
-    }
-
-    .hero-crest::after {
-      content: "";
-      position: absolute;
-      width: 40%;
-      height: 32%;
-      border-radius: 50%;
-      border: 2px solid var(--brg-soft);
-      bottom: 14%;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .hero-wordmark {
-      font-size: 0.95rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--text-main);
-      font-weight: 600;
+    .hero-logo-img {
+      height: 110px; /* medium size */
+      width: auto;
+      display: block;
+      margin: 0 auto;
+      filter: drop-shadow(0 0 14px rgba(0,0,0,0.9));
     }
 
     h1 {
@@ -481,10 +426,7 @@
   <!-- NAVIGATION -->
   <nav class="nav">
     <div class="nav-inner">
-      <div class="nav-logo">
-        <div class="nav-logo-mark"></div>
-        <div class="nav-logo-text">Panthera Divitiarum</div>
-      </div>
+      <div class="nav-logo">Panthera Divitiarum</div>
 
       <div class="nav-links">
         <a href="#top">Home</a>
@@ -500,8 +442,7 @@
   <!-- HERO -->
   <header id="top">
     <div class="hero-logo">
-      <div class="hero-crest"></div>
-      <div class="hero-wordmark">Panthera Divitiarum</div>
+      <img src="logo.png" alt="Panthera Divitiarum crest" class="hero-logo-img">
     </div>
 
     <h1>PANTHERA DIVITIARUM</h1>
