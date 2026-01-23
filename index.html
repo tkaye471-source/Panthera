@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Panthera Divitiarum — Ascension Programme</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --brg: #004225;
       --brg-soft: #0a5a3a;
       --brg-dark: #002d18;
-      --text: #f5f5f5;
-      --text-soft: #e0e0e0;
-      --border: rgba(0, 66, 37, 0.45);
+      --text-main: #f3f3f3;
+      --text-soft: #d4d4d4;
+      --border: rgba(0, 66, 37, 0.35);
       --bg: #050505;
     }
 
@@ -25,13 +25,13 @@
     }
 
     body {
-      background: radial-gradient(circle at top, #0a0a0a 0%, #050505 55%, #000 100%);
-      color: var(--text);
+      background: radial-gradient(circle at top, #0b0b0b 0%, #050505 55%, #000 100%);
+      color: var(--text-main);
       font-family: 'Cinzel', serif;
-      font-size: 1.22rem;
-      line-height: 1.85;
+      font-size: 1.08rem;
+      line-height: 1.8;
       overflow-x: hidden;
-      font-weight: 600;
+      font-weight: 400;
     }
 
     /* LOADER */
@@ -51,11 +51,11 @@
     }
 
     .loader-panther-head {
-      width: 180px;
-      height: 180px;
-      border: 3px solid var(--brg);
+      width: 150px;
+      height: 150px;
+      border: 2px solid var(--brg);
       border-radius: 50%;
-      box-shadow: 0 0 26px var(--brg-dark);
+      box-shadow: 0 0 18px var(--brg-dark);
       animation: breatheGlow 3s ease-in-out infinite;
       position: relative;
     }
@@ -64,92 +64,115 @@
     .loader-panther-head::after {
       content: "";
       position: absolute;
-      width: 52px;
-      height: 52px;
-      border: 3px solid var(--brg);
+      width: 44px;
+      height: 44px;
+      border: 2px solid var(--brg);
       border-radius: 50%;
-      top: -26px;
+      top: -20px;
       background: #000;
-      box-shadow: 0 0 14px var(--brg-dark);
+      box-shadow: 0 0 10px var(--brg-dark);
     }
 
     .loader-panther-head::before {
-      left: 14px;
-      transform: rotate(-18deg);
+      left: 12px;
+      transform: rotate(-16deg);
     }
 
     .loader-panther-head::after {
-      right: 14px;
-      transform: rotate(18deg);
+      right: 12px;
+      transform: rotate(16deg);
     }
 
     @keyframes breatheGlow {
-      0% { box-shadow: 0 0 14px var(--brg-dark); transform: scale(0.97); }
-      50% { box-shadow: 0 0 30px var(--brg-soft); transform: scale(1.04); }
-      100% { box-shadow: 0 0 14px var(--brg-dark); transform: scale(0.97); }
+      0% { box-shadow: 0 0 10px var(--brg-dark); transform: scale(0.98); }
+      50% { box-shadow: 0 0 20px var(--brg-soft); transform: scale(1.02); }
+      100% { box-shadow: 0 0 10px var(--brg-dark); transform: scale(0.98); }
     }
 
-    /* NAVIGATION */
+    /* NAVIGATION (REFINED) */
     .nav {
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(0,0,0,0.92);
+      background: rgba(0,0,0,0.9);
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(6px);
     }
 
     .nav-inner {
-      max-width: 1250px;
+      max-width: 1150px;
       margin: 0 auto;
-      padding: 24px 32px;
+      padding: 14px 26px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
     .nav-logo {
-      font-size: 1.35rem;
-      letter-spacing: 4px;
-      color: var(--brg-soft);
-      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo-mark {
+      width: 26px;
+      height: 32px;
+      border-radius: 3px;
+      border: 2px solid var(--brg);
+      position: relative;
+    }
+
+    .nav-logo-mark::before {
+      content: "";
+      position: absolute;
+      inset: 4px;
+      border-radius: 2px;
+      border: 2px solid var(--brg-soft);
+    }
+
+    .nav-logo-text {
+      font-size: 0.95rem;
+      letter-spacing: 3px;
+      color: var(--text-main);
       text-transform: uppercase;
+      font-weight: 600;
     }
 
     .nav-links {
       display: flex;
-      gap: 38px;
-      font-size: 1.22rem;
+      gap: 22px;
+      font-size: 0.95rem;
       text-transform: uppercase;
-      letter-spacing: 1.6px;
-      font-weight: 700;
+      letter-spacing: 1.4px;
+      font-weight: 500;
     }
 
     .nav-links a {
-      color: var(--text);
+      color: var(--text-main);
       text-decoration: underline;
-      text-underline-offset: 6px;
-      transition: 0.25s ease;
+      text-underline-offset: 4px;
+      text-decoration-thickness: 1px;
+      transition: color 0.2s ease, text-decoration-thickness 0.2s ease;
     }
 
     .nav-links a:hover {
       color: var(--brg-soft);
-      text-shadow: 0 0 14px var(--brg-dark);
+      text-decoration-thickness: 2px;
     }
 
-    /* WATERMARK */
+    /* WATERMARK (SUBTLE) */
     .panther-watermark {
       position: fixed;
-      width: 28vw;
-      max-width: 300px;
+      width: 23vw;
+      max-width: 240px;
       aspect-ratio: 1/1;
       border-radius: 50%;
-      border: 3px solid var(--brg);
-      top: 18%;
-      right: -10%;
-      opacity: 0.16;
+      border: 2px solid var(--brg);
+      top: 20%;
+      right: -8%;
+      opacity: 0.12;
       pointer-events: none;
-      z-index: 2;
+      z-index: 1;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -160,7 +183,7 @@
       width: 70%;
       height: 70%;
       border-radius: 50%;
-      border: 3px solid var(--brg-soft);
+      border: 2px solid var(--brg-soft);
       position: relative;
     }
 
@@ -168,38 +191,38 @@
     .panther-watermark-inner::after {
       content: "";
       position: absolute;
-      width: 26%;
-      height: 26%;
-      border-radius: 4px;
-      border: 3px solid var(--brg-soft);
+      width: 24%;
+      height: 24%;
+      border-radius: 3px;
+      border: 2px solid var(--brg-soft);
       top: -6%;
       background: rgba(0,0,0,0.9);
     }
 
     .panther-watermark-inner::before {
       left: 10%;
-      transform: rotate(-18deg);
+      transform: rotate(-16deg);
     }
 
     .panther-watermark-inner::after {
       right: 10%;
-      transform: rotate(18deg);
+      transform: rotate(16deg);
     }
 
     @keyframes driftPanther {
       0% { transform: translate(0,0); }
-      50% { transform: translate(-12%,10%); }
+      50% { transform: translate(-10%,8%); }
       100% { transform: translate(0,0); }
     }
 
-    /* FOOTPRINTS */
+    /* FOOTPRINTS (TONED DOWN) */
     .panther-footprint {
       position: fixed;
-      width: 80px;
-      height: 100px;
-      opacity: 0.16;
+      width: 65px;
+      height: 85px;
+      opacity: 0.10;
       pointer-events: none;
-      z-index: 3;
+      z-index: 1;
     }
 
     .panther-footprint::before,
@@ -211,8 +234,8 @@
     }
 
     .panther-footprint::before {
-      width: 60px;
-      height: 50px;
+      width: 50px;
+      height: 40px;
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
@@ -224,93 +247,217 @@
     }
 
     .panther-footprint::after {
-      width: 22px;
-      height: 26px;
+      width: 16px;
+      height: 20px;
       top: 0;
       left: 50%;
       transform: translateX(-50%);
       box-shadow:
-        -32px 10px 0 var(--brg),
+        -24px 8px 0 var(--brg),
         0px 0px 0 var(--brg),
-        32px 10px 0 var(--brg),
-        -16px -5px 0 var(--brg),
-        16px -5px 0 var(--brg);
+        24px 8px 0 var(--brg),
+        -12px -4px 0 var(--brg),
+        12px -4px 0 var(--brg);
     }
 
     .walking-print {
-      animation: walkAcross 12s linear infinite;
+      animation: walkAcross 14s linear infinite;
     }
 
     @keyframes walkAcross {
-      0% { transform: translate(-20%,110%) rotate(10deg); }
-      100% { transform: translate(120%,-10%) rotate(25deg); }
+      0% { transform: translate(-20%,110%) rotate(8deg); }
+      100% { transform: translate(120%,-10%) rotate(20deg); }
     }
 
-    /* SECTION WRAPPERS */
+    /* HERO + SECTIONS BASE */
+    header {
+      text-align: center;
+      padding: 90px 20px 70px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-logo {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .hero-crest {
+      width: 70px;
+      height: 90px;
+      border-radius: 4px;
+      border: 2px solid var(--brg);
+      position: relative;
+      box-shadow: 0 0 14px rgba(0,0,0,0.8);
+    }
+
+    .hero-crest::before {
+      content: "";
+      position: absolute;
+      inset: 6px;
+      border-radius: 3px;
+      border: 2px solid var(--brg-soft);
+    }
+
+    .hero-crest::after {
+      content: "";
+      position: absolute;
+      width: 40%;
+      height: 32%;
+      border-radius: 50%;
+      border: 2px solid var(--brg-soft);
+      bottom: 14%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .hero-wordmark {
+      font-size: 0.95rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: 3.1rem;
+      color: var(--brg-soft);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .tagline {
+      font-size: 1.25rem;
+      margin-top: 8px;
+      font-style: italic;
+      color: var(--text-soft);
+    }
+
+    .subtag {
+      margin-top: 10px;
+      font-size: 0.98rem;
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      color: var(--text-soft);
+    }
+
     .section-wrapper {
-      max-width: 1150px;
-      margin: 90px auto;
-      padding: 60px 45px;
+      max-width: 1050px;
+      margin: 70px auto;
+      padding: 46px 34px;
       background: rgba(0,0,0,0.9);
-      border-left: 4px solid var(--brg-dark);
-      border-right: 4px solid var(--brg-dark);
-      box-shadow: 0 0 32px rgba(0,0,0,0.75);
+      border-left: 3px solid var(--brg-dark);
+      border-right: 3px solid var(--brg-dark);
+      box-shadow: 0 0 24px rgba(0,0,0,0.7);
     }
 
     .section-wrapper h2 {
-      font-size: 2.75rem;
+      font-size: 2.1rem;
       color: var(--brg-soft);
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       text-transform: uppercase;
-      font-weight: 700;
-      text-shadow: 0 0 14px var(--brg-dark);
+      font-weight: 600;
     }
 
     .section-wrapper p {
-      font-size: 1.22rem;
+      font-size: 1.05rem;
       color: var(--text-soft);
-      margin-bottom: 26px;
-      font-weight: 600;
+      margin-bottom: 18px;
+      font-weight: 400;
     }
 
     .pill {
       display: inline-block;
-      padding: 10px 20px;
+      padding: 7px 16px;
       border-radius: 999px;
       border: 1px solid var(--brg);
       color: var(--brg-soft);
-      font-size: 1.05rem;
+      font-size: 0.85rem;
       text-transform: uppercase;
-      margin-bottom: 26px;
-      font-weight: 700;
+      margin-bottom: 18px;
+      font-weight: 600;
+      letter-spacing: 1.2px;
     }
 
     .stage-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-      gap: 32px;
-      margin-top: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+      gap: 22px;
+      margin-top: 18px;
     }
 
     .stage-card {
       border: 1px solid var(--border);
-      padding: 28px 24px;
-      border-radius: 6px;
+      padding: 20px 18px;
+      border-radius: 5px;
       background: rgba(5,5,5,0.92);
-      box-shadow: 0 0 22px rgba(0,0,0,0.65);
+      box-shadow: 0 0 18px rgba(0,0,0,0.6);
     }
 
     .stage-card h3 {
-      font-size: 1.55rem;
+      font-size: 1.15rem;
       color: var(--brg-soft);
-      margin-bottom: 12px;
-      font-weight: 700;
+      margin-bottom: 8px;
+      font-weight: 600;
+      text-transform: uppercase;
     }
 
     .stage-card p {
-      font-size: 1.18rem;
+      font-size: 1.02rem;
       color: var(--text-soft);
-      font-weight: 600;
+      font-weight: 400;
+    }
+
+    .ethos-list {
+      padding-left: 20px;
+      margin-top: 10px;
+      font-size: 1.02rem;
+      color: var(--text-soft);
+    }
+
+    .ethos-list li {
+      margin-bottom: 8px;
+    }
+
+    .cta-block {
+      text-align: center;
+      margin-top: 24px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 11px 26px;
+      border-radius: 999px;
+      border: 1px solid var(--brg);
+      color: var(--brg-soft);
+      text-decoration: none;
+      font-size: 0.98rem;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      background: rgba(0,0,0,0.8);
+      transition: 0.2s ease;
+    }
+
+    .cta-btn + .cta-btn {
+      margin-left: 10px;
+    }
+
+    .cta-btn:hover {
+      background: var(--brg);
+      color: #fff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+      color: #8a8a8a;
+      border-top: 1px solid var(--border);
+      margin-top: 70px;
     }
   </style>
 </head>
@@ -326,15 +473,19 @@
     <div class="panther-watermark-inner"></div>
   </div>
 
-  <!-- FOOTPRINTS -->
-  <div class="panther-footprint walking-print" style="top: 20%; left: -20%; animation-delay: 0s;"></div>
-  <div class="panther-footprint walking-print" style="top: 45%; left: -25%; animation-delay: 4s;"></div>
-  <div class="panther-footprint walking-print" style="top: 70%; left: -30%; animation-delay: 8s;"></div>
+  <!-- FOOTPRINTS (SUBTLE) -->
+  <div class="panther-footprint walking-print" style="top: 22%; left: -20%; animation-delay: 0s;"></div>
+  <div class="panther-footprint walking-print" style="top: 48%; left: -25%; animation-delay: 4s;"></div>
+  <div class="panther-footprint walking-print" style="top: 72%; left: -30%; animation-delay: 8s;"></div>
 
   <!-- NAVIGATION -->
   <nav class="nav">
     <div class="nav-inner">
-      <div class="nav-logo">PANTHERA DIVITIARUM</div>
+      <div class="nav-logo">
+        <div class="nav-logo-mark"></div>
+        <div class="nav-logo-text">Panthera Divitiarum</div>
+      </div>
+
       <div class="nav-links">
         <a href="#top">Home</a>
         <a href="#programme">Programme</a>
@@ -347,36 +498,17 @@
   </nav>
 
   <!-- HERO -->
-  <header id="top" style="text-align:center; padding:120px 20px 80px;">
-    <h1 style="
-      font-size: 4rem;
-      color: var(--brg-soft);
-      letter-spacing: 5px;
-      text-shadow: 0 0 14px var(--brg-dark);
-      margin-bottom: 18px;
-      font-weight: 700;
-    ">
-      PANTHERA DIVITIARUM
-    </h1>
+  <header id="top">
+    <div class="hero-logo">
+      <div class="hero-crest"></div>
+      <div class="hero-wordmark">Panthera Divitiarum</div>
+    </div>
 
-    <p class="tagline" style="
-      font-size: 1.55rem;
-      margin-top: 10px;
-      font-style: italic;
-      color: var(--text-soft);
-      font-weight: 600;
-    ">
-      Wealth is hunted, not hoped for.
-    </p>
+    <h1>PANTHERA DIVITIARUM</h1>
 
-    <p class="subtag" style="
-      margin-top: 14px;
-      font-size: 1.15rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--text-soft);
-      font-weight: 600;
-    ">
+    <p class="tagline">Wealth is hunted, not hoped for.</p>
+
+    <p class="subtag">
       Private Wealth Intelligence • Ascension Trading Programme
     </p>
   </header>
@@ -387,16 +519,15 @@
     <h2>The Path to Institutional Discipline</h2>
 
     <p>
-      The Ascension Programme is a structured development framework designed to transition traders from reactive,
-      emotionally driven behaviour into disciplined, strategic operators. Every stage builds on the last, reinforcing
-      clarity, precision, and long‑term thinking. This is not a fast‑track system — it is a refinement process that
-      shapes traders into individuals capable of operating with institutional standards.
+      The Ascension Programme is a structured development system designed to transition traders away from reactive,
+      emotionally driven behaviour and into a disciplined, strategic operating model. It is built for individuals who
+      value clarity, precision, and long‑term progression over short‑term excitement.
     </p>
 
     <p>
-      The programme is intentionally demanding. It prioritises consistency over excitement, structure over improvisation,
-      and strategic execution over impulsive decision‑making. The goal is simple: to produce traders who behave like
-      professionals, not participants in a high‑risk game.
+      Each stage reinforces a deeper level of control — psychological, technical, and behavioural. The objective is not
+      speed, but refinement. Traders learn to operate with the same composure and structure expected within private
+      wealth environments.
     </p>
 
     <div class="stage-grid">
@@ -404,24 +535,24 @@
       <div class="stage-card">
         <h3>Stage I — Foundation</h3>
         <p>
-          The foundation stage establishes discipline, risk structure, and psychological control. Traders learn to remove
-          retail habits, eliminate emotional triggers, and operate from a position of clarity rather than impulse.
+          Establishes discipline, risk structure, and emotional neutrality. Retail habits are removed and replaced with
+          controlled, repeatable processes.
         </p>
       </div>
 
       <div class="stage-card">
         <h3>Stage II — Refinement</h3>
         <p>
-          Refinement sharpens execution. Timing, precision, and consistency become the focus. Traders begin to understand
-          the difference between activity and progress — and how to operate with intention.
+          Sharpens execution. Timing, precision, and consistency become the focus. Traders learn to distinguish between
+          meaningful action and noise.
         </p>
       </div>
 
       <div class="stage-card">
         <h3>Stage III — Ascension</h3>
         <p>
-          Ascension is where traders begin to scale. Capital is managed with the mindset of a private wealth operator.
-          Decisions become measured, strategic, and aligned with long‑term positioning rather than short‑term excitement.
+          Capital scaling begins. Decisions become measured, strategic, and aligned with long‑term positioning rather
+          than short‑term impulses.
         </p>
       </div>
 
@@ -434,21 +565,20 @@
     <h2>Scaling Toward £20,000 Trading Balances</h2>
 
     <p>
-      Capital growth within Panthera Divitiarum is not based on aggression or oversized positions. It is built on
-      consistency, discipline, and the ability to manage risk with precision. The objective is to develop traders who
-      can handle meaningful capital without compromising structure or emotional stability.
+      Capital growth within Panthera Divitiarum is built on consistency, structure, and controlled execution. We do not
+      reward aggression or oversized positions — we reward discipline. The ability to manage capital responsibly is the
+      foundation of long‑term success.
     </p>
 
     <p>
-      Scaling is introduced gradually and strategically. Each increase in capital is earned through demonstrated
-      consistency, controlled execution, and adherence to the Panthera Standard. This ensures that growth is sustainable,
-      not reckless.
+      Scaling is introduced gradually and only when a trader demonstrates stability, clarity, and adherence to the
+      Panthera Standard. This ensures that growth is sustainable, not reckless.
     </p>
 
     <p>
       The benchmark is clear:
-      <strong style="color: var(--brg-soft); font-weight: 700;">
-        Operate a £20,000 account with the discipline and clarity of a private wealth professional.
+      <strong style="color: var(--brg-soft); font-weight: 600;">
+        Operate a £20,000 account with the composure and precision of a private wealth professional.
       </strong>
     </p>
   </section>
@@ -458,19 +588,19 @@
     <h2>The Panthera Standard</h2>
 
     <p>
-      Panthera Divitiarum maintains a standard that is intentionally demanding. Entry is selective, expectations are
-      explicit, and discipline is non‑negotiable. We operate with the understanding that capital is not a toy, nor a
-      source of entertainment — it is a strategic asset that requires structure, clarity, and respect.
+      The Panthera Standard exists to protect the integrity of the programme and the long‑term development of every
+      individual within it. Expectations are clear, discipline is non‑negotiable, and conduct must reflect the mindset
+      of a private wealth operator rather than a retail participant.
     </p>
 
     <p>
-      The Panthera Standard exists to protect the integrity of the programme and the long‑term development of every
-      trader within it. Those who enter are expected to uphold a level of conduct that reflects professionalism,
-      patience, and strategic intent.
+      We prioritise structure, clarity, and consistency. Traders who enter the programme are expected to uphold a level
+      of professionalism that aligns with the values of the house — measured decision‑making, controlled execution, and
+      a commitment to long‑term progression.
     </p>
 
-    <ul class="ethos-list" style="margin-top: 20px; padding-left: 25px; font-size: 1.18rem; color: var(--text-soft); font-weight: 600;">
-      <li>No gambling. No chasing. No emotional trading.</li>
+    <ul class="ethos-list">
+      <li>No gambling, chasing, or emotional trading.</li>
       <li>Risk is defined before entry — without exception.</li>
       <li>Consistency is valued above intensity or excitement.</li>
       <li>Every decision must serve long‑term positioning.</li>
@@ -484,13 +614,13 @@
 
     <p>
       Panthera Divitiarum operates with a philosophy rooted in clarity, discipline, and strategic patience. We reject
-      the noise, chaos, and emotional volatility that dominate retail behaviour. Instead, we prioritise structure,
-      intentionality, and the long‑term preservation and growth of capital.
+      the noise and emotional volatility that dominate retail behaviour. Instead, we prioritise structure, intentionality,
+      and the preservation and growth of capital over time.
     </p>
 
     <p>
-      The ethos is simple: move with purpose, think with precision, and execute with the mindset of a private wealth
-      operator. Every action must be justified. Every decision must be measured. Nothing is left to chance.
+      The ethos is simple: move with purpose, think with precision, and execute with the composure expected within
+      private wealth environments. Nothing is rushed. Nothing is forced. Every action is deliberate.
     </p>
   </section>
 
@@ -500,9 +630,9 @@
     <h2>Apply to the Ascension Programme</h2>
 
     <p>
-      Entry into Panthera Divitiarum is by application only. We are not seeking volume — we are seeking alignment.
-      Individuals who value discipline, structure, and long‑term development will find a home here. Those who seek
-      shortcuts, excitement, or rapid gratification will not.
+      Entry into Panthera Divitiarum is selective. We are not seeking volume — we are seeking alignment. Individuals who
+      value discipline, structure, and long‑term development will find a home here. Those who seek shortcuts or rapid
+      gratification will not.
     </p>
 
     <p>
@@ -532,7 +662,7 @@
         setTimeout(function () {
           loader.style.display = 'none';
         }, 700);
-      }, 1500);
+      }, 1400);
     });
   </script>
 
