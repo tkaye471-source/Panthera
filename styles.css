@@ -1,0 +1,174 @@
+/* ------------------------------
+   GLOBAL STYLES
+------------------------------ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #0b1f16; /* Deep British Racing Green */
+  color: #f2f2e9; /* Cream */
+  line-height: 1.6;
+}
+
+/* Containers */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 1px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 2.2rem;
+}
+
+.section-intro {
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* ------------------------------
+   HERO SECTION
+------------------------------ */
+
+.hero {
+  position: relative;
+  background: linear-gradient(180deg, #0b1f16 0%, #0f2a1d 100%);
+  padding: 80px 0 120px;
+  text-align: center;
+}
+
+.panther-logo {
+  width: 260px;
+  max-width: 90%;
+  margin-bottom: 25px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-slogan {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.hero-tagline {
+  font-size: 1rem;
+  opacity: 0.85;
+  margin-bottom: 30px;
+}
+
+/* Buttons */
+.btn {
+  padding: 12px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.btn.primary {
+  background-color: #d4d4c7;
+  color: #0b1f16;
+}
+
+.btn.ghost {
+  border: 2px solid #d4d4c7;
+  color: #d4d4c7;
+}
+
+/* ------------------------------
+   SECTIONS
+------------------------------ */
+
+.section {
+  padding: 80px 0;
+}
+
+.section-light {
+  background-color: #f2f2e9;
+  color: #0b1f16;
+}
+
+.section-dark {
+  background-color: #0b1f16;
+  color: #f2f2e9;
+}
+
+/* Grid layout */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+/* Lists */
+.list li {
+  margin-bottom: 12px;
+}
+
+.pillars li span {
+  font-weight: 700;
+}
+
+/* Cards */
+.card {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.section-light .card {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+}
+
+/* Code block */
+.code-block {
+  font-family: monospace;
+  white-space: pre-wrap;
+  font-size: 0.95rem;
+}
+
+/* Notes */
+.note {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* ------------------------------
+   FOOTER
+------------------------------ */
+
+.footer {
+  background-color: #000;
+  color: #f2f2e9;
+  padding: 25px 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer-tagline {
+  display: block;
+  margin-top: 5px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
