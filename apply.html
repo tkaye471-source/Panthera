@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply — Panthera Divitiarum</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      background: #050505;
+      color: #e0e0e0;
+      font-family: 'Cinzel', serif;
+      line-height: 1.7;
+    }
+
+    :root {
+      --gold: #c9a86a;
+      --border: rgba(201,168,106,0.25);
+    }
+
+    .wrapper {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 40px 30px;
+      border-left: 4px solid var(--gold);
+      border-right: 4px solid var(--gold);
+      background: rgba(255,255,255,0.03);
+      box-shadow: 0 0 25px rgba(0,0,0,0.6);
+    }
+
+    h1 {
+      color: var(--gold);
+      text-align: center;
+      letter-spacing: 3px;
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+      color: var(--gold);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      background: #111;
+      border: 1px solid var(--border);
+      color: #e0e0e0;
+      font-family: 'Cinzel', serif;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: var(--gold);
+      border: none;
+      color: #000;
+      font-family: 'Cinzel', serif;
+      cursor: pointer;
+      letter-spacing: 1px;
+    }
+
+    .back {
+      display: block;
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <h1>Apply for Consideration</h1>
+
+    <p>
+      Entry into Panthera Divitiarum is selective. Submit your details below and your application will be reviewed.
+    </p>
+
+    <form>
+      <label>Your Name</label>
+      <input type="text" placeholder="Enter your full name">
+
+      <label>Email Address</label>
+      <input type="email" placeholder="Enter your email">
+
+      <label>Current Trading Experience</label>
+      <textarea rows="4" placeholder="Describe your trading background"></textarea>
+
+      <label>Why do you want to join the Ascension Programme?</label>
+      <textarea rows="4"></textarea>
+
+      <button type="submit">Submit Application</button>
+    </form>
+
+    <p class="back">
+      <a href="index.html">← Return to Home</a>
+    </p>
+  </div>
+
+</body>
+</html>
