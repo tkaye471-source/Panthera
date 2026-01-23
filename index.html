@@ -11,41 +11,95 @@
       background-color: #0b0b0b;
       color: #d6d6d6;
       font-family: 'Cinzel', serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    header {
       text-align: center;
+      padding: 60px 20px 40px;
     }
+
     .logo {
-      max-width: 300px;
+      max-width: 280px;
       height: auto;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
+
     h1 {
-      font-size: 2.8rem;
-      letter-spacing: 3px;
+      font-size: 3rem;
       margin: 0;
+      letter-spacing: 2px;
     }
+
     .tagline {
-      margin-top: 12px;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       font-style: italic;
-      color: #9a9a9a;
+      color: #999;
+      margin-top: 10px;
     }
-    .divider {
-      width: 80px;
-      height: 2px;
-      background: #444;
-      margin: 25px auto;
+
+    section {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 5px;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+      color: #777;
+      border-top: 1px solid #333;
+    }
+
+    a {
+      color: #aaa;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #fff;
     }
   </style>
 </head>
 <body>
-  <img src="logo.png?v=1" alt="Panthera Divitiarum Logo" class="logo">
-  <h1>PANTHERA DIVITIARUM</h1>
-  <div class="divider"></div>
-  <p class="tagline">Wealth is hunted, not hoped for.</p>
+
+  <header>
+    <img src="logo.png?v=1" alt="Panthera Divitiarum Logo" class="logo">
+    <h1>PANTHERA DIVITIARUM</h1>
+    <p class="tagline">Wealth is hunted, not hoped for.</p>
+  </header>
+
+  <section>
+    <h2>About Us</h2>
+    <p>Panthera Divitiarum is a private wealth intelligence house for disciplined, affluent clients. Inspired by Roman legacy and precision, we deliver elite trading signals and strategic market insights with unmatched discretion and clarity.</p>
+  </section>
+
+  <section>
+    <h2>Our Services</h2>
+    <p>We offer premium trading signals, macroeconomic intelligence, and curated market positioning strategies. Our platform is designed for high-performance individuals who value exclusivity, control, and legacy-driven growth.</p>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>Interested in joining our private network? Reach out via <a href="#">Telegram</a> or <a href="#">Discord</a>. For bespoke inquiries, email us at <a href="#">contact@pantheradivitiarum.com</a>.</p>
+  </section>
+
+  <footer>
+    &copy; 2026 Panthera Divitiarum. All rights reserved.
+  </footer>
+
 </body>
 </html>
