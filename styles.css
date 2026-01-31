@@ -1,7 +1,33 @@
-/* ------------------------------
-   GLOBAL STYLES
------------------------------- */
+/* ----------------------------------------------------------
+   PANTHERA DIVITIARUM — GLOBAL LUXURY STYLESHEET
+   Swiss Private Bank Aesthetic • Pearl White + Baby Blue
+   ---------------------------------------------------------- */
 
+/* ------------------------------
+   ROOT VARIABLES (COLOUR SYSTEM)
+   ------------------------------ */
+:root {
+  --white: #ffffff;
+  --pearl: #f9fbff;
+  --ice-blue: #e8f3ff;
+  --baby-blue: #cfe4ff;
+
+  --ink: #0b1724;
+  --ink-soft: #3a4a63;
+
+  --silver: #c9d3df;
+  --mist: #dde6f0;
+
+  --shadow-soft: rgba(15, 35, 70, 0.06);
+  --glow-blue: rgba(207, 228, 255, 0.55);
+
+  --radius: 10px;
+  --transition: 0.25s ease;
+}
+
+/* ------------------------------
+   GLOBAL RESET
+   ------------------------------ */
 * {
   margin: 0;
   padding: 0;
@@ -9,166 +35,193 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #0b1f16; /* Deep British Racing Green */
-  color: #f2f2e9; /* Cream */
-  line-height: 1.6;
+  background: var(--pearl);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  overflow-x: hidden;
 }
 
-/* Containers */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-}
-
-/* Headings */
-h1, h2, h3 {
+/* ------------------------------
+   TYPOGRAPHY SYSTEM
+   ------------------------------ */
+h1, h2, h3, h4 {
   font-family: 'Cinzel', serif;
-  letter-spacing: 1px;
+  color: var(--ink);
+  letter-spacing: 1.4px;
+}
+
+h1 {
+  font-size: 2.6rem;
+  font-weight: 600;
 }
 
 h2 {
-  margin-bottom: 20px;
-  font-size: 2.2rem;
-}
-
-.section-intro {
-  margin-bottom: 25px;
-  font-size: 1.1rem;
-  opacity: 0.9;
-}
-
-/* ------------------------------
-   HERO SECTION
------------------------------- */
-
-.hero {
-  position: relative;
-  background: linear-gradient(180deg, #0b1f16 0%, #0f2a1d 100%);
-  padding: 80px 0 120px;
-  text-align: center;
-}
-
-.panther-logo {
-  width: 260px;
-  max-width: 90%;
-  margin-bottom: 25px;
-}
-
-.hero-text h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-
-.hero-slogan {
-  font-size: 1.3rem;
-  font-weight: 500;
-  margin-bottom: 10px;
-}
-
-.hero-tagline {
-  font-size: 1rem;
-  opacity: 0.85;
-  margin-bottom: 30px;
-}
-
-/* Buttons */
-.btn {
-  padding: 12px 24px;
-  border-radius: 4px;
-  text-decoration: none;
+  font-size: 2rem;
   font-weight: 600;
-  margin: 0 10px;
-  display: inline-block;
 }
 
-.btn.primary {
-  background-color: #d4d4c7;
-  color: #0b1f16;
+p {
+  color: var(--ink-soft);
+  font-weight: 300;
+  margin-bottom: 18px;
 }
 
-.btn.ghost {
-  border: 2px solid #d4d4c7;
-  color: #d4d4c7;
+.number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.3rem;
+  color: var(--ink);
 }
 
 /* ------------------------------
-   SECTIONS
------------------------------- */
-
+   LUXURY SPACING SYSTEM
+   ------------------------------ */
 .section {
-  padding: 80px 0;
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 0 30px;
 }
 
-.section-light {
-  background-color: #f2f2e9;
-  color: #0b1f16;
-}
-
-.section-dark {
-  background-color: #0b1f16;
-  color: #f2f2e9;
-}
-
-/* Grid layout */
-.grid-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-}
-
-/* Lists */
-.list li {
-  margin-bottom: 12px;
-}
-
-.pillars li span {
-  font-weight: 700;
-}
-
-/* Cards */
 .card {
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 20px;
-  border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: var(--white);
+  border: 1px solid var(--mist);
+  border-radius: var(--radius);
+  padding: 40px;
+  box-shadow: 0 14px 40px var(--shadow-soft);
+  transition: var(--transition);
 }
 
-.section-light .card {
-  background-color: #ffffff;
-  border: 1px solid #ccc;
+.card:hover {
+  box-shadow: 0 18px 50px var(--shadow-soft);
+  border-color: var(--baby-blue);
 }
 
-/* Code block */
-.code-block {
-  font-family: monospace;
-  white-space: pre-wrap;
-  font-size: 0.95rem;
+/* ------------------------------
+   NAVIGATION (PRIVATE BANK STYLE)
+   ------------------------------ */
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--mist);
+  z-index: 50;
 }
 
-/* Notes */
-.note {
-  margin-top: 10px;
+.nav-inner {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 18px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  letter-spacing: 3px;
+  color: var(--ink);
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 26px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--ink-soft);
   font-size: 0.9rem;
-  opacity: 0.8;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  padding-bottom: 3px;
+  border-bottom: 1px solid transparent;
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--ink);
+  border-color: var(--baby-blue);
+}
+
+/* ------------------------------
+   HERO SECTION (APPLE-LEVEL)
+   ------------------------------ */
+.hero {
+  text-align: center;
+  padding: 160px 20px 120px;
+  background: linear-gradient(to bottom, var(--white), var(--ice-blue));
+  border-bottom: 1px solid var(--mist);
+}
+
+.hero img {
+  height: 180px;
+  margin-bottom: 25px;
+  filter: drop-shadow(0 0 12px var(--glow-blue));
+}
+
+.hero .tagline {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-top: 10px;
+}
+
+.hero .subtag {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  color: var(--ink-soft);
+}
+
+/* ------------------------------
+   BUTTONS (LUXURY)
+   ------------------------------ */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 999px;
+  border: 1px solid var(--ink);
+  background: var(--white);
+  color: var(--ink);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background: var(--ink);
+  color: var(--white);
+  border-color: var(--ink);
+}
+
+/* Secondary button */
+.btn-secondary {
+  border: none;
+  background: transparent;
+  color: var(--ink-soft);
+}
+
+.btn-secondary:hover {
+  color: var(--ink);
+  text-decoration: underline;
 }
 
 /* ------------------------------
    FOOTER
------------------------------- */
-
-.footer {
-  background-color: #000;
-  color: #f2f2e9;
-  padding: 25px 0;
+   ------------------------------ */
+footer {
   text-align: center;
-  font-size: 0.9rem;
-}
-
-.footer-tagline {
-  display: block;
-  margin-top: 5px;
-  font-weight: 600;
-  letter-spacing: 1px;
+  padding: 50px 20px;
+  background: var(--white);
+  border-top: 1px solid var(--mist);
+  color: var(--ink-soft);
+  font-size: 0.85rem;
 }
