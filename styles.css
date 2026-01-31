@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------
-   PANTHERA DIVITIARUM — GLOBAL LUXURY STYLESHEET
+   PANTHERA DIVITIARUM — GLOBAL LUXURY STYLESHEET (COMBINED)
    Swiss Private Bank Aesthetic • Pearl White + Baby Blue
    ---------------------------------------------------------- */
 
@@ -83,7 +83,10 @@ p {
   padding: 0 30px;
 }
 
-.card {
+/* ------------------------------
+   LUXURY CARDS
+   ------------------------------ */
+.card, .pd-card {
   background: var(--white);
   border: 1px solid var(--mist);
   border-radius: var(--radius);
@@ -92,9 +95,9 @@ p {
   transition: var(--transition);
 }
 
-.card:hover {
-  box-shadow: 0 18px 50px var(--shadow-soft);
+.card:hover, .pd-card:hover {
   border-color: var(--baby-blue);
+  box-shadow: 0 18px 50px var(--shadow-soft);
 }
 
 /* ------------------------------
@@ -202,7 +205,6 @@ nav {
   border-color: var(--ink);
 }
 
-/* Secondary button */
 .btn-secondary {
   border: none;
   background: transparent;
@@ -212,6 +214,169 @@ nav {
 .btn-secondary:hover {
   color: var(--ink);
   text-decoration: underline;
+}
+
+/* ------------------------------
+   PILL LABELS
+   ------------------------------ */
+.pd-pill {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: var(--ice-blue);
+  border: 1px solid var(--baby-blue);
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* ------------------------------
+   HEADINGS (COMPONENT LIBRARY)
+   ------------------------------ */
+.pd-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+
+.pd-section {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+
+.pd-sub {
+  font-family: 'Cinzel', serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--ink-soft);
+  margin-bottom: 10px;
+}
+
+/* ------------------------------
+   BODY TEXT
+   ------------------------------ */
+.pd-body {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.8;
+  margin-bottom: 22px;
+}
+
+/* ------------------------------
+   STAGE CARDS (PROGRAMME)
+   ------------------------------ */
+.pd-stage {
+  background: var(--white);
+  border: 1px solid var(--mist);
+  border-radius: var(--radius);
+  padding: 40px;
+  box-shadow: 0 14px 40px var(--shadow-soft);
+  transition: var(--transition);
+}
+
+.pd-stage:hover {
+  border-color: var(--baby-blue);
+  box-shadow: 0 18px 50px var(--shadow-soft);
+}
+
+.pd-stage-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.4rem;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.pd-stage-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: var(--ink);
+}
+
+.pd-stage-text {
+  font-family: 'Inter', sans-serif;
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+
+/* ------------------------------
+   GRID SYSTEM
+   ------------------------------ */
+.pd-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.pd-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+@media (max-width: 900px) {
+  .pd-grid-2, .pd-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ------------------------------
+   CTA BLOCK
+   ------------------------------ */
+.pd-cta {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* ------------------------------
+   DIVIDER
+   ------------------------------ */
+.pd-divider {
+  width: 60%;
+  height: 1px;
+  background: var(--mist);
+  margin: 50px auto;
+}
+
+/* ------------------------------
+   FORM FIELDS
+   ------------------------------ */
+.pd-form-group {
+  margin-bottom: 24px;
+}
+
+label {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.pd-input {
+  width: 100%;
+  padding: 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--mist);
+  background: var(--white);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.pd-input:focus {
+  border-color: var(--baby-blue);
+  outline: none;
+  box-shadow: 0 0 0 3px var(--glow-blue);
 }
 
 /* ------------------------------
