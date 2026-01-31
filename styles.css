@@ -1,33 +1,51 @@
 /* ----------------------------------------------------------
-   PANTHERA DIVITIARUM — GLOBAL LUXURY STYLESHEET (COMBINED)
-   Swiss Private Bank Aesthetic • Pearl White + Baby Blue
-   ---------------------------------------------------------- */
+   BLOCK 1 — CORE FOUNDATIONS
+   Panthera Divitiarum Design System
+   Colours • Typography • Spacing • Shadows • Animations • Reset
+---------------------------------------------------------- */
 
-/* ------------------------------
-   ROOT VARIABLES (COLOUR SYSTEM)
-   ------------------------------ */
+/* Typography Imports */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+/* Root Variables */
 :root {
+  /* Brand Colours */
   --white: #ffffff;
-  --pearl: #f9fbff;
-  --ice-blue: #e8f3ff;
-  --baby-blue: #cfe4ff;
+  --offwhite: #f7f9fc;
+  --babyblue: #e8f3ff;
+  --blue-accent: #bcd9ff;
+  --ink: #1a1f27;
+  --ink-soft: #3a4453;
+  --silver: #d9dee7;
 
-  --ink: #0b1724;
-  --ink-soft: #3a4a63;
+  /* Shadows (Soft Luxury) */
+  --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.06);
 
-  --silver: #c9d3df;
-  --mist: #dde6f0;
+  /* Spacing Scale (Luxury Variable Rhythm) */
+  --space-xxs: 6px;
+  --space-xs: 12px;
+  --space-sm: 20px;
+  --space-md: 32px;
+  --space-lg: 48px;
+  --space-xl: 72px;
+  --space-xxl: 120px;
 
-  --shadow-soft: rgba(15, 35, 70, 0.06);
-  --glow-blue: rgba(207, 228, 255, 0.55);
+  /* Layout Width */
+  --max-width: 1150px;
 
-  --radius: 10px;
-  --transition: 0.25s ease;
+  /* Typography */
+  --font-heading: 'Cinzel', serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Animation Durations (Mixed Speeds) */
+  --fade-slow: 1.2s;   /* Hero */
+  --fade-medium: 0.8s; /* Sections */
+  --fade-fast: 0.5s;   /* Cards & Buttons */
 }
 
-/* ------------------------------
-   GLOBAL RESET
-   ------------------------------ */
+/* ----------------------------------------------------------
+   RESET
+---------------------------------------------------------- */
 * {
   margin: 0;
   padding: 0;
@@ -35,358 +53,354 @@
 }
 
 body {
-  background: var(--pearl);
+  background: var(--white);
   color: var(--ink);
-  font-family: 'Inter', sans-serif;
-  line-height: 1.8;
-  font-size: 1.05rem;
-  overflow-x: hidden;
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* ------------------------------
-   TYPOGRAPHY SYSTEM
-   ------------------------------ */
-h1, h2, h3, h4 {
-  font-family: 'Cinzel', serif;
-  color: var(--ink);
-  letter-spacing: 1.4px;
+img {
+  max-width: 100%;
+  display: block;
 }
 
-h1 {
-  font-size: 2.6rem;
-  font-weight: 600;
-}
-
-h2 {
-  font-size: 2rem;
-  font-weight: 600;
-}
-
-p {
-  color: var(--ink-soft);
-  font-weight: 300;
-  margin-bottom: 18px;
-}
-
-.number {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 1.3rem;
-  color: var(--ink);
-}
-
-/* ------------------------------
-   LUXURY SPACING SYSTEM
-   ------------------------------ */
+/* ----------------------------------------------------------
+   BASE LAYOUT
+---------------------------------------------------------- */
 .section {
-  max-width: 1100px;
-  margin: 80px auto;
-  padding: 0 30px;
-}
-
-/* ------------------------------
-   LUXURY CARDS
-   ------------------------------ */
-.card, .pd-card {
-  background: var(--white);
-  border: 1px solid var(--mist);
-  border-radius: var(--radius);
-  padding: 40px;
-  box-shadow: 0 14px 40px var(--shadow-soft);
-  transition: var(--transition);
-}
-
-.card:hover, .pd-card:hover {
-  border-color: var(--baby-blue);
-  box-shadow: 0 18px 50px var(--shadow-soft);
-}
-
-/* ------------------------------
-   NAVIGATION (PRIVATE BANK STYLE)
-   ------------------------------ */
-nav {
-  position: sticky;
-  top: 0;
-  background: rgba(255,255,255,0.96);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--mist);
-  z-index: 50;
-}
-
-.nav-inner {
-  max-width: 1150px;
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 18px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding: var(--space-lg) var(--space-sm);
 }
 
-.nav-logo {
-  font-family: 'Cinzel', serif;
-  font-size: 1rem;
-  letter-spacing: 3px;
-  color: var(--ink);
-  text-transform: uppercase;
+/* Luxury Variable Section Rhythm */
+section {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xxl);
 }
 
-.nav-links {
-  display: flex;
-  gap: 26px;
+/* ----------------------------------------------------------
+   ANIMATIONS
+---------------------------------------------------------- */
+@keyframes fadeInHero {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: var(--ink-soft);
-  font-size: 0.9rem;
-  letter-spacing: 1.4px;
-  text-transform: uppercase;
-  padding-bottom: 3px;
-  border-bottom: 1px solid transparent;
-  transition: var(--transition);
+@keyframes fadeInSection {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
+/* ----------------------------------------------------------
+   BLOCK 2 — TYPOGRAPHY, BUTTONS, CARDS, GRIDS
+   Headings • Body • Buttons • Cards • Grids • Hybrid Corners
+---------------------------------------------------------- */
 
-.nav-links a:hover {
-  color: var(--ink);
-  border-color: var(--baby-blue);
-}
+/* ----------------------------------------------------------
+   TYPOGRAPHY SYSTEM
+---------------------------------------------------------- */
 
-/* ------------------------------
-   HERO SECTION (APPLE-LEVEL)
-   ------------------------------ */
-.hero {
-  text-align: center;
-  padding: 160px 20px 120px;
-  background: linear-gradient(to bottom, var(--white), var(--ice-blue));
-  border-bottom: 1px solid var(--mist);
-}
-
-.hero img {
-  height: 180px;
-  margin-bottom: 25px;
-  filter: drop-shadow(0 0 12px var(--glow-blue));
-}
-
-.hero .tagline {
-  font-family: 'Cinzel', serif;
-  font-size: 1.4rem;
-  font-style: italic;
-  color: var(--ink-soft);
-  margin-top: 10px;
-}
-
-.hero .subtag {
-  margin-top: 12px;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 1.8px;
-  color: var(--ink-soft);
-}
-
-/* ------------------------------
-   BUTTONS (LUXURY)
-   ------------------------------ */
-.btn {
-  display: inline-block;
-  padding: 12px 28px;
-  border-radius: 999px;
-  border: 1px solid var(--ink);
-  background: var(--white);
-  color: var(--ink);
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 1.4px;
-  font-size: 0.9rem;
-  transition: var(--transition);
-}
-
-.btn:hover {
-  background: var(--ink);
-  color: var(--white);
-  border-color: var(--ink);
-}
-
-.btn-secondary {
-  border: none;
-  background: transparent;
-  color: var(--ink-soft);
-}
-
-.btn-secondary:hover {
-  color: var(--ink);
-  text-decoration: underline;
-}
-
-/* ------------------------------
-   PILL LABELS
-   ------------------------------ */
-.pd-pill {
-  display: inline-block;
-  padding: 6px 16px;
-  border-radius: 999px;
-  background: var(--ice-blue);
-  border: 1px solid var(--baby-blue);
-  color: var(--ink-soft);
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 1.4px;
-  margin-bottom: 20px;
-  font-weight: 600;
-}
-
-/* ------------------------------
-   HEADINGS (COMPONENT LIBRARY)
-   ------------------------------ */
+/* Headings */
 .pd-title {
-  font-family: 'Cinzel', serif;
-  font-size: 2.8rem;
+  font-family: var(--font-heading);
+  font-size: 48px;
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--space-sm);
   color: var(--ink);
-  margin-bottom: 20px;
 }
 
 .pd-section {
-  font-family: 'Cinzel', serif;
-  font-size: 2.2rem;
-  font-weight: 600;
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: 500;
+  margin-bottom: var(--space-md);
   color: var(--ink);
-  margin-bottom: 14px;
 }
 
 .pd-sub {
-  font-family: 'Cinzel', serif;
-  font-size: 1.35rem;
-  font-weight: 400;
-  color: var(--ink-soft);
-  margin-bottom: 10px;
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: var(--space-xs);
+  color: var(--ink);
 }
 
-/* ------------------------------
-   BODY TEXT
-   ------------------------------ */
+/* Body Text */
 .pd-body {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.05rem;
+  font-size: 18px;
   color: var(--ink-soft);
-  line-height: 1.8;
-  margin-bottom: 22px;
+  max-width: 800px;
+  margin-bottom: var(--space-md);
 }
 
-/* ------------------------------
-   STAGE CARDS (PROGRAMME)
-   ------------------------------ */
-.pd-stage {
+/* Lead Text (Luxury Intro Paragraphs) */
+.pd-lead {
+  font-size: 20px;
+  line-height: 1.7;
+  color: var(--ink);
+  max-width: 850px;
+  margin-bottom: var(--space-lg);
+}
+
+/* Fine Print (Institutional) */
+.pd-fine {
+  font-size: 14px;
+  color: var(--ink-soft);
+  opacity: 0.8;
+  margin-top: var(--space-sm);
+}
+
+/* Prestige Divider */
+.pd-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--silver);
+  margin: var(--space-xl) 0;
+}
+
+
+/* ----------------------------------------------------------
+   BUTTON SYSTEM (Hybrid Corners)
+---------------------------------------------------------- */
+
+.btn {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--white);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 8px; /* Hybrid: soft but controlled */
+  text-decoration: none;
+  font-weight: 500;
+  transition: background var(--fade-fast), transform var(--fade-fast);
+}
+
+.btn:hover {
+  background: var(--ink-soft);
+  transform: translateY(-3px);
+}
+
+.btn-secondary {
+  display: inline-block;
+  background: var(--babyblue);
+  color: var(--ink);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: var(--space-sm);
+  transition: background var(--fade-fast), transform var(--fade-fast);
+}
+
+.btn-secondary:hover {
+  background: var(--blue-accent);
+  transform: translateY(-3px);
+}
+
+
+/* ----------------------------------------------------------
+   CARD SYSTEM (Hybrid Corners + Soft Luxury Shadow)
+---------------------------------------------------------- */
+
+.pd-card {
   background: var(--white);
-  border: 1px solid var(--mist);
-  border-radius: var(--radius);
-  padding: 40px;
-  box-shadow: 0 14px 40px var(--shadow-soft);
-  transition: var(--transition);
+  padding: var(--space-lg);
+  border-radius: 12px; /* Hybrid: softer for identity components */
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--fade-medium), box-shadow var(--fade-medium);
+  animation: fadeInSection var(--fade-medium) ease-out;
 }
 
-.pd-stage:hover {
-  border-color: var(--baby-blue);
-  box-shadow: 0 18px 50px var(--shadow-soft);
+.pd-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
 }
 
-.pd-stage-num {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 1.4rem;
-  color: var(--ink);
-  margin-bottom: 10px;
-}
 
-.pd-stage-title {
-  font-family: 'Cinzel', serif;
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-  color: var(--ink);
-}
-
-.pd-stage-text {
-  font-family: 'Inter', sans-serif;
-  color: var(--ink-soft);
-  font-size: 1rem;
-}
-
-/* ------------------------------
+/* ----------------------------------------------------------
    GRID SYSTEM
-   ------------------------------ */
+---------------------------------------------------------- */
+
 .pd-grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
 }
 
 .pd-grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
 }
 
-@media (max-width: 900px) {
-  .pd-grid-2, .pd-grid-3 {
-    grid-template-columns: 1fr;
-  }
+.pd-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+/* ----------------------------------------------------------
+   BLOCK 3 — STRUCTURAL LAYOUT COMPONENTS
+   Navigation • Hero • Columns • Gradient Sections • Founder Block
+---------------------------------------------------------- */
+
+
+/* ----------------------------------------------------------
+   NAVIGATION
+---------------------------------------------------------- */
+
+nav {
+  background: var(--white);
+  border-bottom: 1px solid var(--silver);
+  padding: var(--space-sm) 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-/* ------------------------------
-   CTA BLOCK
-   ------------------------------ */
-.pd-cta {
-  text-align: center;
-  margin-top: 30px;
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--space-sm);
 }
 
-/* ------------------------------
-   DIVIDER
-   ------------------------------ */
-.pd-divider {
-  width: 60%;
-  height: 1px;
-  background: var(--mist);
-  margin: 50px auto;
-}
-
-/* ------------------------------
-   FORM FIELDS
-   ------------------------------ */
-.pd-form-group {
-  margin-bottom: 24px;
-}
-
-label {
-  display: block;
-  font-family: 'Cinzel', serif;
-  font-size: 0.9rem;
+.nav-logo {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  letter-spacing: 1px;
   color: var(--ink);
-  margin-bottom: 6px;
 }
 
-.pd-input {
-  width: 100%;
-  padding: 14px;
-  border-radius: var(--radius);
-  border: 1px solid var(--mist);
-  background: var(--white);
-  font-size: 1rem;
-  transition: var(--transition);
+.nav-links a {
+  margin-left: var(--space-md);
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 400;
+  transition: color var(--fade-fast);
 }
 
-.pd-input:focus {
-  border-color: var(--baby-blue);
-  outline: none;
-  box-shadow: 0 0 0 3px var(--glow-blue);
-}
-
-/* ------------------------------
-   FOOTER
-   ------------------------------ */
-footer {
-  text-align: center;
-  padding: 50px 20px;
-  background: var(--white);
-  border-top: 1px solid var(--mist);
+.nav-links a:hover {
   color: var(--ink-soft);
-  font-size: 0.85rem;
+}
+
+
+/* ----------------------------------------------------------
+   HERO (Ultra-Slow Luxury Fade)
+---------------------------------------------------------- */
+
+.hero {
+  text-align: center;
+  padding: var(--space-xxl) var(--space-sm) var(--space-xl);
+  animation: fadeInHero var(--fade-slow) ease-out;
+}
+
+.hero .pd-title {
+  margin-top: var(--space-md);
+}
+
+.tagline {
+  font-size: 20px;
+  color: var(--ink-soft);
+  margin-bottom: var(--space-xs);
+}
+
+.subtag {
+  font-size: 16px;
+  color: var(--ink-soft);
+}
+
+
+/* ----------------------------------------------------------
+   GRADIENT SECTIONS (Luxury Transitions)
+---------------------------------------------------------- */
+
+.gradient-section {
+  background: linear-gradient(to bottom, var(--white), var(--babyblue));
+  padding-top: var(--space-xxl);
+  padding-bottom: var(--space-xxl);
+}
+
+
+/* ----------------------------------------------------------
+   TWO-COLUMN LAYOUT
+---------------------------------------------------------- */
+
+.pd-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+  margin-top: var(--space-xl);
+}
+
+.pd-two-col img {
+  border-radius: 12px; /* Hybrid: soft for imagery */
+  box-shadow: var(--shadow-soft);
+}
+
+
+/* ----------------------------------------------------------
+   THREE-COLUMN LAYOUT
+---------------------------------------------------------- */
+
+.pd-three-col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  margin-top: var(--space-xl);
+}
+
+
+/* ----------------------------------------------------------
+   SIDE-BY-SIDE BLOCK (Institutional)
+---------------------------------------------------------- */
+
+.pd-side-by-side {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-xl);
+  margin-top: var(--space-xl);
+}
+
+.pd-side-by-side > div {
+  flex: 1;
+}
+
+
+/* ----------------------------------------------------------
+   FOUNDER BLOCK (Identity Component)
+---------------------------------------------------------- */
+
+.founder-block {
+  background: var(--offwhite);
+  padding: var(--space-xl);
+  border-radius: 12px; /* Hybrid: soft for identity */
+  box-shadow: var(--shadow-soft);
+  animation: fadeInSection var(--fade-medium) ease-out;
+}
+
+.founder-block .pd-sub {
+  margin-bottom: var(--space-sm);
+}
+
+.founder-block .pd-body {
+  margin-bottom: 0;
+}
+
+
+/* ----------------------------------------------------------
+   PRESTIGE SECTION WRAPPER
+---------------------------------------------------------- */
+
+.pd-prestige {
+  background: var(--offwhite);
+  padding: var(--space-xxl) 0;
+  border-top: 1px solid var(--silver);
+  border-bottom: 1px solid var(--silver);
 }
